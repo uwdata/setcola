@@ -1,0 +1,437 @@
+/********************* INSPECTOR *********************/
+
+  .temp-region {
+    display: none;
+    margin: 0px 2px 4px 2px;
+    flex: 0 1 40%;
+    flex-flow: column;
+    overflow: scroll;
+  }
+
+  .long-text {
+    width: 850px;
+  }
+
+/*---------------------- ERROR ----------------------*/
+
+  .temp-region.error {
+    border: 1px solid #c80101;
+    flex: 0 1 10%;
+  }
+
+  .temp-region.config .error {
+    display: block;
+    margin: 5px;
+  }
+
+  .temp-region.error .error p, .temp-region.error .error .fa {
+    display: inline-block;
+    padding: 0px 5px;
+    margin: 13px 0px;
+    font-size: smaller;
+    color: #c80101;
+  }
+
+  .temp-region.error .error p {
+    font-family: sans-serif;
+  }
+
+  .temp-region.error .label {
+    color: #c80101;
+    font-family: monospace;
+    padding: 0px 0px 0px 5px;
+  }
+
+  .temp-region.error .value {
+    font-family: monospace;
+  }
+
+  .temp-region.error .options, 
+  .temp-region.error .debug, 
+  .temp-region.error .help,
+  .temp-region.error .cite {
+    display: none;
+  }
+
+/*---------------------- DEBUG ----------------------*/
+
+  .temp-region.debug {
+    border: 1px solid #efad0c;
+  }
+
+  .temp-region.debug .debug {
+    display: block;
+    margin: 5px;
+  }
+
+  .temp-region.debug h1 {
+    display: inline-block;
+    margin: 0px 0px 5px 0px;
+    font-size: 20px;
+    color: #efad0c;
+  }
+
+  .temp-region.debug .name {
+    font-family: monospace;
+    font-size: 18px;
+    color: #efad0c;
+  }
+
+  .temp-region.debug span.bold {
+    font-weight: bold;
+  }
+
+  .fa-caret-right, .fa-caret-down {
+    margin-left: 6px;
+    color: #efad0c;
+    cursor: pointer;
+  }
+
+  .temp-region.debug .contents {
+    margin-left: 10px;
+    padding: 6px 0px;
+    font-size: 11pt;
+  }
+
+  .temp-region.debug .check span {
+    padding-left: 2px;
+    color: #aaa;
+    cursor: pointer;
+  }
+
+  .temp-region.debug .contents .number {
+    font-family: monospace;
+    color: #efad0c;
+  }
+
+  .temp-region.debug .error, 
+  .temp-region.debug .options,
+  .temp-region.debug .cite, 
+  .temp-region.debug .help {
+    display: none;
+  }
+
+/*--------------------- VALIDATE --------------------*/
+
+  .temp-region .validate .label-header {
+    display: inline-block;
+  }
+
+  .temp-region .validate .label-header.left {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .temp-region .validatecontents {
+    display: none;
+  }
+
+  .temp-region .validatecontents .label {
+    display: inline-block;
+    width: 175px;
+  }
+
+  .temp-region .validatecontents .label span {
+    float: right;
+  }
+
+  .temp-region .validatecontents .label.left span {
+    float: left;
+  }
+
+  .temp-region .validatecontents .value {
+    color: #aaa;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 16px;
+  }
+
+  .switch input {display:none;}
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #efad0c;
+    border-radius: 34px;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  .temp-region .validatecontents .legend {
+    padding: 10px 15px;
+    width: 200px;
+    height: 100px;
+    position: relative;
+    left: 150px;
+  }
+
+  .temp-region .validatecontents .legend text {
+    color: black;
+    font-size: 10pt;
+    font-family: sans-serif;
+  }
+
+/*---------------------- CONFIG ---------------------*/
+
+  .temp-region.config {
+    border: 1px solid #01adc8;
+  }
+
+  .temp-region.config .options {
+    display: block;
+    margin: 5px;
+  }
+
+  .temp-region.config h1 {
+    display: inline-block;
+    margin: 0px 0px 5px 0px;
+    font-size: 20px;
+    color: #01adc8;
+  }
+
+  .temp-region.config h2 {
+    margin: 2px 0px;
+    font-size: larger;
+    font-family: monospace;
+    font-weight: normal;
+    display: inline;
+    color: #01adc8;
+  }
+
+  .temp-region.config .explanation {
+    margin: 0px 5px;
+    font-size: smaller;
+    font-style: italic;
+    color: #aaa;
+  }
+
+  .temp-region.config .label {
+    display: inline-block;
+    width: 175px;
+  }
+
+  .temp-region.config .label span {
+    float: right;
+  }
+
+  .temp-region.config .value {
+    color: #aaa;
+  }
+
+  .temp-region.config .error, 
+  .temp-region.config .debug,
+  .temp-region.config .cite, 
+  .temp-region.config .help {
+    display: none;
+  }
+
+/*----------------------- HELP ----------------------*/
+
+  .temp-region.help {
+    border: 1px solid #78c801;
+  }
+
+  .temp-region.help .help {
+    display: block;
+    margin: 5px;
+  }
+
+  .temp-region.help h1 {
+    margin: 0px 0px 5px 0px;
+    font-size: 20px;
+    color: #78c801;
+  }
+
+  .temp-region.help h2 {
+    display: inline-block;
+    margin: 5px 0px 10px 0px;
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 18px;
+    color: #78c801;
+    cursor: default;
+  }
+
+  .temp-region.help .label, .temp-region.help .def {
+    display: inline-block;
+    height: 12px;
+  }
+
+  .temp-region.help .label {
+    width: 175px;
+  }
+
+  .temp-region.help span {
+    font-size: 10pt;
+    font-family: monospace;
+    font-weight: normal;
+  } 
+
+  .temp-region.help .explanation {
+    display: inline-block;
+    margin: 0px 2px;
+    margin: 0px;
+    font-size: 10pt;
+    font-family: monospace;
+    font-weight: normal;
+    font-style: italic;
+    color: #aaa;
+  } 
+
+  .temp-region.help .label span {
+    float: right;
+  }
+
+  .temp-region.help .type {
+    color: blue;
+  }
+
+  .temp-region.help .sep {
+    color: #aaa;
+  }
+
+  .temp-region.help .error, 
+  .temp-region.help .options, 
+  .temp-region.help .debug,
+  .temp-region.help .cite {
+    display: none;
+  }
+
+/*----------------------- CITE ----------------------*/
+
+  .temp-region.cite {
+    border: 1px solid #b86fdc;
+  }
+
+  .temp-region.cite .cite {
+    display: block;
+    margin: 5px;
+    width: 100%;
+  }
+
+  .temp-region.cite h1 {
+    display: inline-block;
+    margin: 0px 0px 5px 0px;
+    font-size: 20px;
+    color: #b86fdc;
+  }
+
+  .temp-region.cite .quote-right {
+    display: block;
+    margin: 5px;
+  }
+
+  .temp-region.cite .error,
+  .temp-region.cite .options, 
+  .temp-region.cite .debug, 
+  .temp-region.cite .help {
+    display: none;
+  }
+
+  .temp-region.cite .paragraphlink {
+    color: #b86fdc;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .temp-region.cite .url {
+    font-family: monospace;
+    color: #b86fdc;
+    cursor: pointer;
+  }
+
+  /****** Publications *******/
+
+  .publication {
+    min-height: 60px;
+    padding: 5px 0px;
+    display: flex;
+    flex-flow: row;
+  }
+
+  .publication img {
+    flex: none;
+    width: 120px;
+    height: 60px;
+    margin: 5px 0px;
+  }
+
+  .publication img:hover {
+    -webkit-box-shadow: 0px 0px 5px 3px #ddd;
+    -moz-box-shadow: 0px 0px 5px 3px #ddd;
+    box-shadow: 0px 0px 5px 3px #ddd;
+  }
+
+  .paper {
+    flex: 80% 0 auto;
+    display: inline-block;
+    padding: 7px 0px 7px 15px;
+  }
+
+  .publication p {
+    display: inline;
+    font-family: sans-serif;
+  }
+
+  .publication .title {
+    font-weight: bold;
+  }
+
+  .publication .venue {
+    font-style: oblique;
+  }
+
+  .publication a {
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+  }
+
+  .publication a:hover { 
+    color: #b86fdc;
+    text-decoration: underline;
+  }
+
+  .bibtex-text.selected {
+    font-weight: bold;
+    color: #b86fdc;
+  }
+
+  .bibtex {
+    background: #eee;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+
+  .bibtex pre {
+    font-size: 10pt;
+    margin: 0px;
+  }
+

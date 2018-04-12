@@ -1,0 +1,1308 @@
+{
+  "nodes": [
+    {
+      "_id":0,"code":"ABU","species":"Abutilon spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":1,"code":"ACAFRU","species":"Acalypha fruticosa","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":2,"code":"ACAROB","species":"Acacia robusta","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":3,"code":"ACASEN","species":"Acacia senegal","group1":12,
+      "habitat":"Grassland",
+      "color":"#557C1F","size":20,"pad":2
+    },
+    {
+      "_id":4,"code":"ACASEY","species":"Acacia seyal","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":5,"code":"ACATOR","species":"Acacia tortilis","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":6,"code":"ACAXAN","species":"Acacia xanthophloea","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":7,"code":"ACHASP","species":"Achyranthes aspera","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":8,"code":"ACIJUB","species":"Acinonyx jubatus","group1":1,
+      "color":"#932C02","size":40
+    },
+    {
+      "_id":9,"code":"AEPMEL","species":"Aepyceros melampus","group1":4,
+      "color":"#1B0085","size":25
+    },
+    {
+      "_id":10,"code":"ALBHAR","species":"Albizia harveyi","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":11,"code":"ALBU","species":"Albuca spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":12,"code":"ALCBUS","species":"Alcelaphus buselaphus","group1":4,
+      "color":"#1B0085","size":25
+    },
+    {
+      "_id":13,"code":"ALLRUB","species":"Allophylus rubifolius","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":14,"code":"ALOMAC","species":"Aloe macrosiphon","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":15,"code":"ALOSEC","species":"Aloe secundiflora","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":16,"code":"ANDGRE","species":"Andropogon greenwayi","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":17,"code":"ANDSCH","species":"Andropogon schirensis","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":18,"code":"ARI","species":"Aristida spp.","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":19,"code":"BALAEG","species":"Balanites aegyptiaca","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":20,"code":"BLEACA","species":"Blepharis acanthodioides","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":21,"code":"BOSAUG","species":"Boscia augustifolia","group1":14,
+      "habitat":"Woodland",
+      "color":"#607B14","size":20,"pad":2
+    },
+    {
+      "_id":22,"code":"BOTINS","species":"Bothriochloa insculpta","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":23,"code":"BRASEM","species":"Brachiaria semiundulata","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":24,"code":"CANAUR","species":"Canis aureus","group1":2,
+      "color":"#DC7628","size":40
+    },
+    {
+      "_id":25,"code":"CANMES","species":"Canis mesomelas","group1":2,
+      "color":"#DC7628","size":40
+    },
+    {
+      "_id":26,"code":"CAPTOM","species":"Capparis tomentosa","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":27,"code":"CARCAR","species":"Caracal caracal","group1":2,
+      "color":"#DC7628","size":40
+    },
+    {
+      "_id":28,"code":"CECCIL","species":"Pennisetum ciliare","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":29,"code":"CHLGAY","species":"Chloris gayana","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":30,"code":"CHLPYC","species":"Chloris pycnothrix","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":31,"code":"CHLROX","species":"Chloris roxburghiana","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":32,"code":"CISQUA","species":"Cissus quadrangularis","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":33,"code":"CISROT","species":"Cissus rotundifolia","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":34,"code":"COMMEAFR","species":"Commelina africana","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":35,"code":"COMMER","species":"Commiphora merkeri","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":36,"code":"COMMIAFR","species":"Commiphora trothae","group1":14,
+      "habitat":"Woodland",
+      "color":"#607B14","size":20,"pad":2
+    },
+    {
+      "_id":37,"code":"COMMOL","species":"Combretum molle","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":38,"code":"COMSCH","species":"Commiphora schimperi","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":39,"code":"CONTAU","species":"Connochaetes taurinus","group1":4,
+      "color":"#1B0085","size":25
+    },
+    {
+      "_id":40,"code":"COROVA","species":"Cordia ovalis","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":41,"code":"CROCRO","species":"Crocuta crocuta","group1":1,
+      "color":"#932C02","size":40
+    },
+    {
+      "_id":42,"code":"CRODIC","species":"Croton dichogamus","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":43,"code":"CROMAC","species":"Croton macrostachyus","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":44,"code":"CROSPI","species":"Crotalaria spinosa","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":45,"code":"CYMEXC","species":"Cymbopogon excavatus","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":46,"code":"CYNDAC","species":"Cynodon dactylon","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":47,"code":"CYP","species":"Cyperus spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":48,"code":"CYPH","species":"Cyphostemma spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":49,"code":"DAMKOR","species":"Damaliscus korrigum","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":50,"code":"DIGDIA","species":"Digitaria diagonalis","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":51,"code":"DIGMAC","species":"Digitaria macroblephara","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":52,"code":"DIGMIL","species":"Digitaria milanjiana","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":53,"code":"DIGSCA","species":"Digitaria scalarum","group1":7,
+      "color":"#6BAF72","size":20,"pad":2
+    },
+    {
+      "_id":54,"code":"DIGTER","species":"Digitaria ternata","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":55,"code":"DIGVEL","species":"Digitaria velutina","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":56,"code":"DIHAMP","species":"Diheteropogon amplectens","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":57,"code":"DINRET","species":"Dinebra retroflexa","group1":7,
+      "color":"#6BAF72","size":20,"pad":2
+    },
+    {
+      "_id":58,"code":"DUOKIL","species":"Duosperma kilimandscharica","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":59,"code":"ECHHAP","species":"Echinochloa haploclada","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":60,"code":"EMICOC","species":"Emilia coccinea","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":61,"code":"EQUBUR","species":"Equus quagga","group1":4,
+      "color":"#1B0085","size":25
+    },
+    {
+      "_id":62,"code":"ERAASP","species":"Eragrostis aspera","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":63,"code":"ERACIL","species":"Eragrostis cilianensis","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":64,"code":"ERAEXA","species":"Eragrostis exasperata","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":65,"code":"ERATEN","species":"Eragrostis tenuifolia","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":66,"code":"ERINUB","species":"Eriochloa nubica","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":67,"code":"EUPCAN","species":"Euphorbia candelabrum","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":68,"code":"EUSPAS","species":"Eustachys paspaloides","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":69,"code":"FICGLU","species":"Ficus glumosa","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":70,"code":"FICING","species":"Ficus ingens","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":71,"code":"FICTHI","species":"Ficus thonningii","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":72,"code":"GAZGRA","species":"Nanger granti","group1":4,
+      "color":"#1B0085","size":25
+    },
+    {
+      "_id":73,"code":"GAZTHO","species":"Eudorcas thomsonii","group1":4,
+      "color":"#1B0085","size":25
+    },
+    {
+      "_id":74,"code":"GIRCAM","species":"Giraffa camelopardalis","group1":6,
+      "color":"#1C268C","size":25
+    },
+    {
+      "_id":75,"code":"GREBIC","species":"Grewia bicolor","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":76,"code":"GREFAL","species":"Grewia fallax","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":77,"code":"GRETRI","species":"Grewia trichocarpa","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":78,"code":"HARSCH","species":"Harpachne schimperi","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":79,"code":"HELSTE","species":"Heliotropium steudneri","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":80,"code":"HETBRU","species":"Heterohyrax brucei","group1":5,
+      "color":"#3F3ED3","size":25
+    },
+    {
+      "_id":81,"code":"HETCON","species":"Heteropogon contortus","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":82,"code":"HIB","species":"Hibiscus spp.","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":83,"code":"HIBLUN","species":"Hibiscus lunariifolius","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":84,"code":"HIPAMP","species":"Hippopotamus amphibius","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":85,"code":"HOSOPP","species":"Hoslundia opposita","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":86,"code":"HYPDIS","species":"Hyperthelia dissoluta","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":87,"code":"HYPFIL","species":"Hyparrhenia filipendula","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":88,"code":"HYPFOR","species":"Hypoestes forskaolii","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":89,"code":"HYPRUF","species":"Hyparrhenia rufa","group1":7,
+      "habitat":"Woodland",
+      "color":"#6BAF72","size":20,"pad":2
+    },
+    {
+      "_id":90,"code":"IBO","species":"Iboza spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":91,"code":"INDBAS","species":"Indigofera basiflora","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":92,"code":"INDHOC","species":"Indigofera hochstetteri","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":93,"code":"IPOOBS","species":"Ipomoea obscura","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":94,"code":"JAS","species":"Jasminum spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":95,"code":"KAL","species":"Kalanchoe spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":96,"code":"KEDFOE","species":"Kedrostis foetidissima","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":97,"code":"KIGAFR","species":"Kigelia africana","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":98,"code":"KOBELL","species":"Kobus ellipsiprymnus","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":99,"code":"KYLNER","species":"Kyllinga nervosa","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":100,"code":"LEPSER","species":"Leptailurus serval","group1":2,
+      "color":"#DC7628","size":40
+    },
+    {
+      "_id":101,"code":"LIPUKA","species":"Lippia ukambensis","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":102,"code":"LONERI","species":"Lonchocarpus eriocalyx","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":103,"code":"LOXAFR","species":"Loxodonta africana","group1":6,
+      "color":"#1C268C","size":25
+    },
+    {
+      "_id":104,"code":"LYCPIC","species":"Lycaon pictus","group1":1,
+      "color":"#932C02","size":40
+    },
+    {
+      "_id":105,"code":"MADKIR","species":"Madoqua kirkii","group1":6,
+      "color":"#1C268C","size":25
+    },
+    {
+      "_id":106,"code":"MAETRI","species":"Maerua cafra","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":107,"code":"MICKUN","species":"Microchloa kunthii","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":108,"code":"OCI","species":"Ocimum spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":109,"code":"OLE","species":"Olea spp.","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":110,"code":"OUROUR","species":"Ourebia ourebi","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":111,"code":"PANCOL","species":"Panicum coloratum","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":112,"code":"PANDEU","species":"Panicum deustum","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":113,"code":"PANLEO","species":"Panthera leo","group1":1,
+      "color":"#932C02","size":40
+    },
+    {
+      "_id":114,"code":"PANMAX","species":"Panicum maximum","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":115,"code":"PANPAR","species":"Panthera pardus","group1":1,
+      "color":"#932C02","size":40
+    },
+    {
+      "_id":116,"code":"PANREP","species":"Panicum repens","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":117,"code":"PAPANU","species":"Papio anubis","group1":6,
+      "color":"#1C268C","size":25
+    },
+    {
+      "_id":118,"code":"PAPCAP","species":"Pappea capensis","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":119,"code":"PAVASS","species":"Pavetta assimilis","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":120,"code":"PAVPAT","species":"Pavonia patens","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":121,"code":"PEDCAP","species":"Pedetes capensis","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":122,"code":"PELCAL","species":"Pellaea calomelanos","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":123,"code":"PENMEZ","species":"Pennisetum mezianum","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":124,"code":"PENSTR","species":"Pennisetum stramineum","group1":10,
+      "habitat": "Grassland",
+      "color":"#49782A","size":20,"pad":2
+    },
+    {
+      "_id":125,"code":"PHAAET","species":"Phacochoerus africanus","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":126,"code":"PHRMAU","species":"Phragmites mauritianus","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":127,"code":"PHYSEP","species":"Phyllanthus sepialis","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":128,"code":"PROCAP","species":"Procavia capensis","group1":5,
+      "color":"#3F3ED3","size":25
+    },
+    {
+      "_id":129,"code":"PSIJAE","species":"Psilolemma jaegeri","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":130,"code":"PUPLAP","species":"Pupalia lappacea","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":131,"code":"REDRED","species":"Redunca redunca","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":132,"code":"RHAPUM","species":"Rhabdomys pumilio","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":133,"code":"RHOREV","species":"Rhoicissus revoilii","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":134,"code":"SARVER","species":"Sarga versicolor","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":135,"code":"SCLBIR","species":"Sclerocarya birrea","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":136,"code":"SENDID","species":"Senna didymobotrya","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":137,"code":"SENEHR","species":"Sansevieria ehrenbergii","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":138,"code":"SENSUF","species":"Sansevieria suffruticosa","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":139,"code":"SETPAL","species":"Setaria pallidefusca","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":140,"code":"SETSPH","species":"Setaria sphacelata","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":141,"code":"SID","species":"Sida spp.","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":142,"code":"SOLDEN","species":"Solanum dennekense","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":143,"code":"SOLINC","species":"Solanum incanum","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":144,"code":"SOLNIG","species":"Solanum nigrum","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":145,"code":"SPOFES","species":"Sporobolus festivus","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":146,"code":"SPOFIM","species":"Sporobolus fimbriatus","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":147,"code":"SPOIOC","species":"Sporobolus ioclados","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":148,"code":"SPOPEL","species":"Sporobolus pellucidus","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":149,"code":"SPOPYR","species":"Sporobolus pyramidalis","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":150,"code":"SPOSPI","species":"Sporobolus spicatus","group1":8,
+      "color":"#42773A","size":20,"pad":2
+    },
+    {
+      "_id":151,"code":"SPOSTA","species":"Sporobolus stapfianus","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":152,"code":"SYNCAF","species":"Syncerus caffer","group1":6,
+      "color":"#1C268C","size":25
+    },
+    {
+      "_id":153,"code":"TAUORY","species":"Taurotragus oryx","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":154,"code":"THETRI","species":"Themeda triandra","group1":9,
+      "color":"#78B660","size":20,"pad":2
+    },
+    {
+      "_id":155,"code":"TRASCR","species":"Tragelaphus scriptus","group1":3,
+      "color":"#4317BB","size":25
+    },
+    {
+      "_id":156,"code":"TRIEIC","species":"Tricholaena teneriffae","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":157,"code":"TURFIS","species":"Turraea fischeri","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":158,"code":"TYPCAP","species":"Typha capensis","group1":11,
+      "color":"#84BA51","size":20,"pad":2
+    },
+    {
+      "_id":159,"code":"XIMCAF","species":"Ximenia caffra","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    },
+    {
+      "_id":160,"code":"ZIZ","species":"Ziziphus spp.","group1":13,
+      "color":"#90BD43","size":20,"pad":2
+    }
+  ],
+  "links": [
+    {"prey_code":"AEPMEL","pred_code":"ACIJUB","source":8,"target":9},
+    {"prey_code":"CONTAU","pred_code":"ACIJUB","source":8,"target":39},
+    {"prey_code":"GAZGRA","pred_code":"ACIJUB","source":8,"target":72},
+    {"prey_code":"GAZTHO","pred_code":"ACIJUB","source":8,"target":73},
+    {"prey_code":"MADKIR","pred_code":"ACIJUB","source":8,"target":105},
+    {"prey_code":"OUROUR","pred_code":"ACIJUB","source":8,"target":110},
+    {"prey_code":"PHAAET","pred_code":"ACIJUB","source":8,"target":125},
+    {"prey_code":"REDRED","pred_code":"ACIJUB","source":8,"target":131},
+    {"prey_code":"CONTAU","pred_code":"CANAUR","source":24,"target":39},
+    {"prey_code":"EQUBUR","pred_code":"CANAUR","source":24,"target":61},
+    {"prey_code":"GAZGRA","pred_code":"CANAUR","source":24,"target":72},
+    {"prey_code":"GAZTHO","pred_code":"CANAUR","source":24,"target":73},
+    {"prey_code":"MADKIR","pred_code":"CANMES","source":25,"target":105},
+    {"prey_code":"MADKIR","pred_code":"CARCAR","source":27,"target":105},
+    {"prey_code":"PEDCAP","pred_code":"CARCAR","source":27,"target":121},
+    {"prey_code":"PROCAP","pred_code":"CARCAR","source":27,"target":128},
+    {"prey_code":"RHAPUM","pred_code":"CARCAR","source":27,"target":132},
+    {"prey_code":"AEPMEL","pred_code":"CROCRO","source":41,"target":9},
+    {"prey_code":"ALCBUS","pred_code":"CROCRO","source":41,"target":12},
+    {"prey_code":"CONTAU","pred_code":"CROCRO","source":41,"target":39},
+    {"prey_code":"DAMKOR","pred_code":"CROCRO","source":41,"target":49},
+    {"prey_code":"EQUBUR","pred_code":"CROCRO","source":41,"target":61},
+    {"prey_code":"GAZGRA","pred_code":"CROCRO","source":41,"target":72},
+    {"prey_code":"GAZTHO","pred_code":"CROCRO","source":41,"target":73},
+    {"prey_code":"KOBELL","pred_code":"CROCRO","source":41,"target":98},
+    {"prey_code":"MADKIR","pred_code":"CROCRO","source":41,"target":105},
+    {"prey_code":"OUROUR","pred_code":"CROCRO","source":41,"target":110},
+    {"prey_code":"PHAAET","pred_code":"CROCRO","source":41,"target":125},
+    {"prey_code":"REDRED","pred_code":"CROCRO","source":41,"target":131},
+    {"prey_code":"RHAPUM","pred_code":"LEPSER","source":100,"target":132},
+    {"prey_code":"AEPMEL","pred_code":"LYCPIC","source":104,"target":9},
+    {"prey_code":"ALCBUS","pred_code":"LYCPIC","source":104,"target":12},
+    {"prey_code":"CONTAU","pred_code":"LYCPIC","source":104,"target":39},
+    {"prey_code":"DAMKOR","pred_code":"LYCPIC","source":104,"target":49},
+    {"prey_code":"EQUBUR","pred_code":"LYCPIC","source":104,"target":61},
+    {"prey_code":"GAZGRA","pred_code":"LYCPIC","source":104,"target":72},
+    {"prey_code":"GAZTHO","pred_code":"LYCPIC","source":104,"target":73},
+    {"prey_code":"KOBELL","pred_code":"LYCPIC","source":104,"target":98},
+    {"prey_code":"MADKIR","pred_code":"LYCPIC","source":104,"target":105},
+    {"prey_code":"OUROUR","pred_code":"LYCPIC","source":104,"target":110},
+    {"prey_code":"PHAAET","pred_code":"LYCPIC","source":104,"target":125},
+    {"prey_code":"REDRED","pred_code":"LYCPIC","source":104,"target":131},
+    {"prey_code":"RHAPUM","pred_code":"LYCPIC","source":104,"target":132},
+    {"prey_code":"TRASCR","pred_code":"LYCPIC","source":104,"target":155},
+    {"prey_code":"AEPMEL","pred_code":"PANLEO","source":113,"target":9},
+    {"prey_code":"ALCBUS","pred_code":"PANLEO","source":113,"target":12},
+    {"prey_code":"CONTAU","pred_code":"PANLEO","source":113,"target":39},
+    {"prey_code":"CROCRO","pred_code":"PANLEO","source":113,"target":41},
+    {"prey_code":"DAMKOR","pred_code":"PANLEO","source":113,"target":49},
+    {"prey_code":"EQUBUR","pred_code":"PANLEO","source":113,"target":61},
+    {"prey_code":"GAZGRA","pred_code":"PANLEO","source":113,"target":72},
+    {"prey_code":"GAZTHO","pred_code":"PANLEO","source":113,"target":73},
+    {"prey_code":"GIRCAM","pred_code":"PANLEO","source":113,"target":74},
+    {"prey_code":"KOBELL","pred_code":"PANLEO","source":113,"target":98},
+    {"prey_code":"MADKIR","pred_code":"PANLEO","source":113,"target":105},
+    {"prey_code":"OUROUR","pred_code":"PANLEO","source":113,"target":110},
+    {"prey_code":"PANLEO","pred_code":"PANLEO","source":113,"target":113},
+    {"prey_code":"PHAAET","pred_code":"PANLEO","source":113,"target":125},
+    {"prey_code":"REDRED","pred_code":"PANLEO","source":113,"target":131},
+    {"prey_code":"RHAPUM","pred_code":"PANLEO","source":113,"target":132},
+    {"prey_code":"SYNCAF","pred_code":"PANLEO","source":113,"target":152},
+    {"prey_code":"TAUORY","pred_code":"PANLEO","source":113,"target":153},
+    {"prey_code":"TRASCR","pred_code":"PANLEO","source":113,"target":155},
+    {"prey_code":"ACIJUB","pred_code":"PANPAR","source":115,"target":8},
+    {"prey_code":"AEPMEL","pred_code":"PANPAR","source":115,"target":9},
+    {"prey_code":"ALCBUS","pred_code":"PANPAR","source":115,"target":12},
+    {"prey_code":"CANAUR","pred_code":"PANPAR","source":115,"target":24},
+    {"prey_code":"CANMES","pred_code":"PANPAR","source":115,"target":25},
+    {"prey_code":"CONTAU","pred_code":"PANPAR","source":115,"target":39},
+    {"prey_code":"DAMKOR","pred_code":"PANPAR","source":115,"target":49},
+    {"prey_code":"EQUBUR","pred_code":"PANPAR","source":115,"target":61},
+    {"prey_code":"GAZGRA","pred_code":"PANPAR","source":115,"target":72},
+    {"prey_code":"GAZTHO","pred_code":"PANPAR","source":115,"target":73},
+    {"prey_code":"HETBRU","pred_code":"PANPAR","source":115,"target":80},
+    {"prey_code":"KOBELL","pred_code":"PANPAR","source":115,"target":98},
+    {"prey_code":"LEPSER","pred_code":"PANPAR","source":115,"target":100},
+    {"prey_code":"MADKIR","pred_code":"PANPAR","source":115,"target":105},
+    {"prey_code":"OUROUR","pred_code":"PANPAR","source":115,"target":110},
+    {"prey_code":"PAPANU","pred_code":"PANPAR","source":115,"target":117},
+    {"prey_code":"PEDCAP","pred_code":"PANPAR","source":115,"target":121},
+    {"prey_code":"PHAAET","pred_code":"PANPAR","source":115,"target":125},
+    {"prey_code":"REDRED","pred_code":"PANPAR","source":115,"target":131},
+    {"prey_code":"RHAPUM","pred_code":"PANPAR","source":115,"target":132},
+    {"prey_code":"TAUORY","pred_code":"PANPAR","source":115,"target":153},
+    {"prey_code":"TRASCR","pred_code":"PANPAR","source":115,"target":155},
+    {"prey_code":"ACASEN","pred_code":"AEPMEL","source":9,"target":3},
+    {"prey_code":"ACATOR","pred_code":"AEPMEL","source":9,"target":5},
+    {"prey_code":"ANDGRE","pred_code":"AEPMEL","source":9,"target":16},
+    {"prey_code":"ARI","pred_code":"AEPMEL","source":9,"target":18},
+    {"prey_code":"BRASEM","pred_code":"AEPMEL","source":9,"target":23},
+    {"prey_code":"CHLGAY","pred_code":"AEPMEL","source":9,"target":29},
+    {"prey_code":"COMMOL","pred_code":"AEPMEL","source":9,"target":37},
+    {"prey_code":"CROMAC","pred_code":"AEPMEL","source":9,"target":43},
+    {"prey_code":"CYNDAC","pred_code":"AEPMEL","source":9,"target":46},
+    {"prey_code":"GREBIC","pred_code":"AEPMEL","source":9,"target":75},
+    {"prey_code":"HARSCH","pred_code":"AEPMEL","source":9,"target":78},
+    {"prey_code":"HIB","pred_code":"AEPMEL","source":9,"target":82},
+    {"prey_code":"HYPFIL","pred_code":"AEPMEL","source":9,"target":87},
+    {"prey_code":"HYPRUF","pred_code":"AEPMEL","source":9,"target":89},
+    {"prey_code":"INDHOC","pred_code":"AEPMEL","source":9,"target":92},
+    {"prey_code":"PANMAX","pred_code":"AEPMEL","source":9,"target":114},
+    {"prey_code":"PENMEZ","pred_code":"AEPMEL","source":9,"target":123},
+    {"prey_code":"SID","pred_code":"AEPMEL","source":9,"target":141},
+    {"prey_code":"SOLINC","pred_code":"AEPMEL","source":9,"target":143},
+    {"prey_code":"SPOFES","pred_code":"AEPMEL","source":9,"target":145},
+    {"prey_code":"SPOIOC","pred_code":"AEPMEL","source":9,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"AEPMEL","source":9,"target":149},
+    {"prey_code":"THETRI","pred_code":"AEPMEL","source":9,"target":154},
+    {"prey_code":"ANDGRE","pred_code":"ALCBUS","source":12,"target":16},
+    {"prey_code":"ARI","pred_code":"ALCBUS","source":12,"target":18},
+    {"prey_code":"BOTINS","pred_code":"ALCBUS","source":12,"target":22},
+    {"prey_code":"BRASEM","pred_code":"ALCBUS","source":12,"target":23},
+    {"prey_code":"CYNDAC","pred_code":"ALCBUS","source":12,"target":46},
+    {"prey_code":"DIGMAC","pred_code":"ALCBUS","source":12,"target":51},
+    {"prey_code":"DIGSCA","pred_code":"ALCBUS","source":12,"target":53},
+    {"prey_code":"DINRET","pred_code":"ALCBUS","source":12,"target":57},
+    {"prey_code":"EUSPAS","pred_code":"ALCBUS","source":12,"target":68},
+    {"prey_code":"HARSCH","pred_code":"ALCBUS","source":12,"target":78},
+    {"prey_code":"HETCON","pred_code":"ALCBUS","source":12,"target":81},
+    {"prey_code":"HYPFIL","pred_code":"ALCBUS","source":12,"target":87},
+    {"prey_code":"HYPRUF","pred_code":"ALCBUS","source":12,"target":89},
+    {"prey_code":"PANCOL","pred_code":"ALCBUS","source":12,"target":111},
+    {"prey_code":"PENMEZ","pred_code":"ALCBUS","source":12,"target":123},
+    {"prey_code":"SID","pred_code":"ALCBUS","source":12,"target":141},
+    {"prey_code":"SOLINC","pred_code":"ALCBUS","source":12,"target":143},
+    {"prey_code":"SPOIOC","pred_code":"ALCBUS","source":12,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"ALCBUS","source":12,"target":149},
+    {"prey_code":"SPOSPI","pred_code":"ALCBUS","source":12,"target":150},
+    {"prey_code":"THETRI","pred_code":"ALCBUS","source":12,"target":154},
+    {"prey_code":"ANDGRE","pred_code":"CONTAU","source":39,"target":16},
+    {"prey_code":"ARI","pred_code":"CONTAU","source":39,"target":18},
+    {"prey_code":"BOTINS","pred_code":"CONTAU","source":39,"target":22},
+    {"prey_code":"BRASEM","pred_code":"CONTAU","source":39,"target":23},
+    {"prey_code":"CHLGAY","pred_code":"CONTAU","source":39,"target":29},
+    {"prey_code":"CYNDAC","pred_code":"CONTAU","source":39,"target":46},
+    {"prey_code":"DIGDIA","pred_code":"CONTAU","source":39,"target":50},
+    {"prey_code":"DIGMAC","pred_code":"CONTAU","source":39,"target":51},
+    {"prey_code":"DIGSCA","pred_code":"CONTAU","source":39,"target":53},
+    {"prey_code":"DINRET","pred_code":"CONTAU","source":39,"target":57},
+    {"prey_code":"ERACIL","pred_code":"CONTAU","source":39,"target":63},
+    {"prey_code":"ERATEN","pred_code":"CONTAU","source":39,"target":65},
+    {"prey_code":"EUSPAS","pred_code":"CONTAU","source":39,"target":68},
+    {"prey_code":"HARSCH","pred_code":"CONTAU","source":39,"target":78},
+    {"prey_code":"HYPFIL","pred_code":"CONTAU","source":39,"target":87},
+    {"prey_code":"HYPRUF","pred_code":"CONTAU","source":39,"target":89},
+    {"prey_code":"INDHOC","pred_code":"CONTAU","source":39,"target":92},
+    {"prey_code":"MICKUN","pred_code":"CONTAU","source":39,"target":107},
+    {"prey_code":"PANCOL","pred_code":"CONTAU","source":39,"target":111},
+    {"prey_code":"PANMAX","pred_code":"CONTAU","source":39,"target":114},
+    {"prey_code":"PENMEZ","pred_code":"CONTAU","source":39,"target":123},
+    {"prey_code":"SID","pred_code":"CONTAU","source":39,"target":141},
+    {"prey_code":"SOLINC","pred_code":"CONTAU","source":39,"target":143},
+    {"prey_code":"SPOIOC","pred_code":"CONTAU","source":39,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"CONTAU","source":39,"target":149},
+    {"prey_code":"THETRI","pred_code":"CONTAU","source":39,"target":154},
+    {"prey_code":"ARI","pred_code":"DAMKOR","source":49,"target":18},
+    {"prey_code":"BOTINS","pred_code":"DAMKOR","source":49,"target":22},
+    {"prey_code":"BRASEM","pred_code":"DAMKOR","source":49,"target":23},
+    {"prey_code":"CROMAC","pred_code":"DAMKOR","source":49,"target":43},
+    {"prey_code":"CYNDAC","pred_code":"DAMKOR","source":49,"target":46},
+    {"prey_code":"ERACIL","pred_code":"DAMKOR","source":49,"target":63},
+    {"prey_code":"HARSCH","pred_code":"DAMKOR","source":49,"target":78},
+    {"prey_code":"HIB","pred_code":"DAMKOR","source":49,"target":82},
+    {"prey_code":"HYPRUF","pred_code":"DAMKOR","source":49,"target":89},
+    {"prey_code":"PENMEZ","pred_code":"DAMKOR","source":49,"target":123},
+    {"prey_code":"PSIJAE","pred_code":"DAMKOR","source":49,"target":129},
+    {"prey_code":"SPOPYR","pred_code":"DAMKOR","source":49,"target":149},
+    {"prey_code":"SPOSPI","pred_code":"DAMKOR","source":49,"target":150},
+    {"prey_code":"THETRI","pred_code":"DAMKOR","source":49,"target":154},
+    {"prey_code":"ARI","pred_code":"EQUBUR","source":61,"target":18},
+    {"prey_code":"BOTINS","pred_code":"EQUBUR","source":61,"target":22},
+    {"prey_code":"BRASEM","pred_code":"EQUBUR","source":61,"target":23},
+    {"prey_code":"CROMAC","pred_code":"EQUBUR","source":61,"target":43},
+    {"prey_code":"CYNDAC","pred_code":"EQUBUR","source":61,"target":46},
+    {"prey_code":"DIGMAC","pred_code":"EQUBUR","source":61,"target":51},
+    {"prey_code":"DINRET","pred_code":"EQUBUR","source":61,"target":57},
+    {"prey_code":"ERATEN","pred_code":"EQUBUR","source":61,"target":65},
+    {"prey_code":"EUSPAS","pred_code":"EQUBUR","source":61,"target":68},
+    {"prey_code":"GREBIC","pred_code":"EQUBUR","source":61,"target":75},
+    {"prey_code":"HARSCH","pred_code":"EQUBUR","source":61,"target":78},
+    {"prey_code":"HETCON","pred_code":"EQUBUR","source":61,"target":81},
+    {"prey_code":"HYPFIL","pred_code":"EQUBUR","source":61,"target":87},
+    {"prey_code":"HYPRUF","pred_code":"EQUBUR","source":61,"target":89},
+    {"prey_code":"PANCOL","pred_code":"EQUBUR","source":61,"target":111},
+    {"prey_code":"PENMEZ","pred_code":"EQUBUR","source":61,"target":123},
+    {"prey_code":"SOLINC","pred_code":"EQUBUR","source":61,"target":143},
+    {"prey_code":"SPOPYR","pred_code":"EQUBUR","source":61,"target":149},
+    {"prey_code":"THETRI","pred_code":"EQUBUR","source":61,"target":154},
+    {"prey_code":"ANDGRE","pred_code":"GAZGRA","source":72,"target":16},
+    {"prey_code":"ARI","pred_code":"GAZGRA","source":72,"target":18},
+    {"prey_code":"BALAEG","pred_code":"GAZGRA","source":72,"target":19},
+    {"prey_code":"BOTINS","pred_code":"GAZGRA","source":72,"target":22},
+    {"prey_code":"CYNDAC","pred_code":"GAZGRA","source":72,"target":46},
+    {"prey_code":"DIGMAC","pred_code":"GAZGRA","source":72,"target":51},
+    {"prey_code":"DIGSCA","pred_code":"GAZGRA","source":72,"target":53},
+    {"prey_code":"DINRET","pred_code":"GAZGRA","source":72,"target":57},
+    {"prey_code":"DUOKIL","pred_code":"GAZGRA","source":72,"target":58},
+    {"prey_code":"ERATEN","pred_code":"GAZGRA","source":72,"target":65},
+    {"prey_code":"EUSPAS","pred_code":"GAZGRA","source":72,"target":68},
+    {"prey_code":"GREBIC","pred_code":"GAZGRA","source":72,"target":75},
+    {"prey_code":"HARSCH","pred_code":"GAZGRA","source":72,"target":78},
+    {"prey_code":"HETCON","pred_code":"GAZGRA","source":72,"target":81},
+    {"prey_code":"HIB","pred_code":"GAZGRA","source":72,"target":82},
+    {"prey_code":"HYPFIL","pred_code":"GAZGRA","source":72,"target":87},
+    {"prey_code":"HYPRUF","pred_code":"GAZGRA","source":72,"target":89},
+    {"prey_code":"INDHOC","pred_code":"GAZGRA","source":72,"target":92},
+    {"prey_code":"MICKUN","pred_code":"GAZGRA","source":72,"target":107},
+    {"prey_code":"PANCOL","pred_code":"GAZGRA","source":72,"target":111},
+    {"prey_code":"PENMEZ","pred_code":"GAZGRA","source":72,"target":123},
+    {"prey_code":"PENSTR","pred_code":"GAZGRA","source":72,"target":124},
+    {"prey_code":"SID","pred_code":"GAZGRA","source":72,"target":141},
+    {"prey_code":"SOLINC","pred_code":"GAZGRA","source":72,"target":143},
+    {"prey_code":"SPOFIM","pred_code":"GAZGRA","source":72,"target":146},
+    {"prey_code":"SPOIOC","pred_code":"GAZGRA","source":72,"target":147},
+    {"prey_code":"THETRI","pred_code":"GAZGRA","source":72,"target":154},
+    {"prey_code":"ANDGRE","pred_code":"GAZTHO","source":73,"target":16},
+    {"prey_code":"ARI","pred_code":"GAZTHO","source":73,"target":18},
+    {"prey_code":"BALAEG","pred_code":"GAZTHO","source":73,"target":19},
+    {"prey_code":"BOTINS","pred_code":"GAZTHO","source":73,"target":22},
+    {"prey_code":"BRASEM","pred_code":"GAZTHO","source":73,"target":23},
+    {"prey_code":"CYNDAC","pred_code":"GAZTHO","source":73,"target":46},
+    {"prey_code":"DIGDIA","pred_code":"GAZTHO","source":73,"target":50},
+    {"prey_code":"DIGMAC","pred_code":"GAZTHO","source":73,"target":51},
+    {"prey_code":"DIGSCA","pred_code":"GAZTHO","source":73,"target":53},
+    {"prey_code":"DINRET","pred_code":"GAZTHO","source":73,"target":57},
+    {"prey_code":"ERACIL","pred_code":"GAZTHO","source":73,"target":63},
+    {"prey_code":"ERATEN","pred_code":"GAZTHO","source":73,"target":65},
+    {"prey_code":"EUSPAS","pred_code":"GAZTHO","source":73,"target":68},
+    {"prey_code":"HARSCH","pred_code":"GAZTHO","source":73,"target":78},
+    {"prey_code":"HETCON","pred_code":"GAZTHO","source":73,"target":81},
+    {"prey_code":"HYPRUF","pred_code":"GAZTHO","source":73,"target":89},
+    {"prey_code":"INDHOC","pred_code":"GAZTHO","source":73,"target":92},
+    {"prey_code":"MICKUN","pred_code":"GAZTHO","source":73,"target":107},
+    {"prey_code":"PANCOL","pred_code":"GAZTHO","source":73,"target":111},
+    {"prey_code":"PENMEZ","pred_code":"GAZTHO","source":73,"target":123},
+    {"prey_code":"SID","pred_code":"GAZTHO","source":73,"target":141},
+    {"prey_code":"SOLINC","pred_code":"GAZTHO","source":73,"target":143},
+    {"prey_code":"SPOFIM","pred_code":"GAZTHO","source":73,"target":146},
+    {"prey_code":"SPOIOC","pred_code":"GAZTHO","source":73,"target":147},
+    {"prey_code":"THETRI","pred_code":"GAZTHO","source":73,"target":154},
+    {"prey_code":"ACAROB","pred_code":"GIRCAM","source":74,"target":2,"length":50},
+    {"prey_code":"ACASEN","pred_code":"GIRCAM","source":74,"target":3},
+    {"prey_code":"ACASEY","pred_code":"GIRCAM","source":74,"target":4},
+    {"prey_code":"ACATOR","pred_code":"GIRCAM","source":74,"target":5},
+    {"prey_code":"BALAEG","pred_code":"GIRCAM","source":74,"target":19},
+    {"prey_code":"COMMIAFR","pred_code":"GIRCAM","source":74,"target":36},
+    {"prey_code":"COROVA","pred_code":"GIRCAM","source":74,"target":40,"length":50},
+    {"prey_code":"CROMAC","pred_code":"GIRCAM","source":74,"target":43},
+    {"prey_code":"GREBIC","pred_code":"GIRCAM","source":74,"target":75},
+    {"prey_code":"GREFAL","pred_code":"GIRCAM","source":74,"target":76,"length":50},
+    {"prey_code":"GRETRI","pred_code":"GIRCAM","source":74,"target":77,"length":50},
+    {"prey_code":"HIB","pred_code":"GIRCAM","source":74,"target":82},
+    {"prey_code":"HIBLUN","pred_code":"GIRCAM","source":74,"target":83,"length":50},
+    {"prey_code":"INDHOC","pred_code":"GIRCAM","source":74,"target":92},
+    {"prey_code":"MAETRI","pred_code":"GIRCAM","source":74,"target":106,"length":50},
+    {"prey_code":"OLE","pred_code":"GIRCAM","source":74,"target":109},
+    {"prey_code":"PAVASS","pred_code":"GIRCAM","source":74,"target":119,"length":50},
+    {"prey_code":"PHYSEP","pred_code":"GIRCAM","source":74,"target":127,"length":50},
+    {"prey_code":"SID","pred_code":"GIRCAM","source":74,"target":141},
+    {"prey_code":"SOLINC","pred_code":"GIRCAM","source":74,"target":143},
+    {"prey_code":"ABU","pred_code":"HETBRU","source":80,"target":0,"length":50},
+    {"prey_code":"ACAFRU","pred_code":"HETBRU","source":80,"target":1,"length":50},
+    {"prey_code":"ACAROB","pred_code":"HETBRU","source":80,"target":2,"length":50},
+    {"prey_code":"ACATOR","pred_code":"HETBRU","source":80,"target":5},
+    {"prey_code":"ALBHAR","pred_code":"HETBRU","source":80,"target":10,"length":50},
+    {"prey_code":"ALBU","pred_code":"HETBRU","source":80,"target":11,"length":50},
+    {"prey_code":"ALLRUB","pred_code":"HETBRU","source":80,"target":13,"length":50},
+    {"prey_code":"ALOMAC","pred_code":"HETBRU","source":80,"target":14,"length":50},
+    {"prey_code":"ALOSEC","pred_code":"HETBRU","source":80,"target":15,"length":50},
+    {"prey_code":"ARI","pred_code":"HETBRU","source":80,"target":18},
+    {"prey_code":"BALAEG","pred_code":"HETBRU","source":80,"target":19},
+    {"prey_code":"CAPTOM","pred_code":"HETBRU","source":80,"target":26,"length":50},
+    {"prey_code":"CECCIL","pred_code":"HETBRU","source":80,"target":28,"length":50},
+    {"prey_code":"CISQUA","pred_code":"HETBRU","source":80,"target":32,"length":50},
+    {"prey_code":"CISROT","pred_code":"HETBRU","source":80,"target":33,"length":50},
+    {"prey_code":"COMMEAFR","pred_code":"HETBRU","source":80,"target":34,"length":50},
+    {"prey_code":"COMMER","pred_code":"HETBRU","source":80,"target":35,"length":50},
+    {"prey_code":"COMSCH","pred_code":"HETBRU","source":80,"target":38,"length":50},
+    {"prey_code":"COROVA","pred_code":"HETBRU","source":80,"target":40,"length":50},
+    {"prey_code":"CRODIC","pred_code":"HETBRU","source":80,"target":42,"length":50},
+    {"prey_code":"CYNDAC","pred_code":"HETBRU","source":80,"target":46},
+    {"prey_code":"CYPH","pred_code":"HETBRU","source":80,"target":48,"length":50},
+    {"prey_code":"DIGVEL","pred_code":"HETBRU","source":80,"target":55,"length":50},
+    {"prey_code":"EMICOC","pred_code":"HETBRU","source":80,"target":60,"length":50},
+    {"prey_code":"FICGLU","pred_code":"HETBRU","source":80,"target":69,"length":50},
+    {"prey_code":"FICING","pred_code":"HETBRU","source":80,"target":70,"length":50},
+    {"prey_code":"FICTHI","pred_code":"HETBRU","source":80,"target":71,"length":50},
+    {"prey_code":"GREFAL","pred_code":"HETBRU","source":80,"target":76,"length":50},
+    {"prey_code":"GRETRI","pred_code":"HETBRU","source":80,"target":77,"length":50},
+    {"prey_code":"HELSTE","pred_code":"HETBRU","source":80,"target":79,"length":50},
+    {"prey_code":"HETCON","pred_code":"HETBRU","source":80,"target":81},
+    {"prey_code":"HIB","pred_code":"HETBRU","source":80,"target":82},
+    {"prey_code":"HIBLUN","pred_code":"HETBRU","source":80,"target":83,"length":50},
+    {"prey_code":"HOSOPP","pred_code":"HETBRU","source":80,"target":85,"length":50},
+    {"prey_code":"HYPFOR","pred_code":"HETBRU","source":80,"target":88,"length":50},
+    {"prey_code":"INDBAS","pred_code":"HETBRU","source":80,"target":91,"length":50},
+    {"prey_code":"IPOOBS","pred_code":"HETBRU","source":80,"target":93,"length":50},
+    {"prey_code":"JAS","pred_code":"HETBRU","source":80,"target":94,"length":50},
+    {"prey_code":"KAL","pred_code":"HETBRU","source":80,"target":95,"length":50},
+    {"prey_code":"KEDFOE","pred_code":"HETBRU","source":80,"target":96,"length":50},
+    {"prey_code":"LIPUKA","pred_code":"HETBRU","source":80,"target":101,"length":50},
+    {"prey_code":"MAETRI","pred_code":"HETBRU","source":80,"target":106,"length":50},
+    {"prey_code":"OCI","pred_code":"HETBRU","source":80,"target":108,"length":50},
+    {"prey_code":"PANMAX","pred_code":"HETBRU","source":80,"target":114},
+    {"prey_code":"PAPCAP","pred_code":"HETBRU","source":80,"target":118,"length":50},
+    {"prey_code":"PAVASS","pred_code":"HETBRU","source":80,"target":119,"length":50},
+    {"prey_code":"PAVPAT","pred_code":"HETBRU","source":80,"target":120,"length":50},
+    {"prey_code":"PENMEZ","pred_code":"HETBRU","source":80,"target":123},
+    {"prey_code":"PENSTR","pred_code":"HETBRU","source":80,"target":124},
+    {"prey_code":"PHYSEP","pred_code":"HETBRU","source":80,"target":127,"length":50},
+    {"prey_code":"PUPLAP","pred_code":"HETBRU","source":80,"target":130,"length":50},
+    {"prey_code":"SCLBIR","pred_code":"HETBRU","source":80,"target":135,"length":50},
+    {"prey_code":"SENDID","pred_code":"HETBRU","source":80,"target":136,"length":50},
+    {"prey_code":"SENEHR","pred_code":"HETBRU","source":80,"target":137,"length":50},
+    {"prey_code":"SENSUF","pred_code":"HETBRU","source":80,"target":138,"length":50},
+    {"prey_code":"SOLDEN","pred_code":"HETBRU","source":80,"target":142,"length":50},
+    {"prey_code":"THETRI","pred_code":"HETBRU","source":80,"target":154},
+    {"prey_code":"TRIEIC","pred_code":"HETBRU","source":80,"target":156,"length":50},
+    {"prey_code":"TURFIS","pred_code":"HETBRU","source":80,"target":157,"length":50},
+    {"prey_code":"XIMCAF","pred_code":"HETBRU","source":80,"target":159,"length":50},
+    {"prey_code":"ZIZ","pred_code":"HETBRU","source":80,"target":160,"length":50},
+    {"prey_code":"BOTINS","pred_code":"HIPAMP","source":84,"target":22},
+    {"prey_code":"CHLGAY","pred_code":"HIPAMP","source":84,"target":29},
+    {"prey_code":"CYNDAC","pred_code":"HIPAMP","source":84,"target":46},
+    {"prey_code":"HETCON","pred_code":"HIPAMP","source":84,"target":81},
+    {"prey_code":"HYPFIL","pred_code":"HIPAMP","source":84,"target":87},
+    {"prey_code":"PANREP","pred_code":"HIPAMP","source":84,"target":116},
+    {"prey_code":"SPOIOC","pred_code":"HIPAMP","source":84,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"HIPAMP","source":84,"target":149},
+    {"prey_code":"THETRI","pred_code":"HIPAMP","source":84,"target":154},
+    {"prey_code":"ACATOR","pred_code":"KOBELL","source":98,"target":5},
+    {"prey_code":"ANDSCH","pred_code":"KOBELL","source":98,"target":17},
+    {"prey_code":"CHLGAY","pred_code":"KOBELL","source":98,"target":29},
+    {"prey_code":"CYMEXC","pred_code":"KOBELL","source":98,"target":45},
+    {"prey_code":"CYNDAC","pred_code":"KOBELL","source":98,"target":46},
+    {"prey_code":"DIGTER","pred_code":"KOBELL","source":98,"target":54},
+    {"prey_code":"HETCON","pred_code":"KOBELL","source":98,"target":81},
+    {"prey_code":"HYPFIL","pred_code":"KOBELL","source":98,"target":87},
+    {"prey_code":"PANCOL","pred_code":"KOBELL","source":98,"target":111},
+    {"prey_code":"PANMAX","pred_code":"KOBELL","source":98,"target":114},
+    {"prey_code":"PHRMAU","pred_code":"KOBELL","source":98,"target":126},
+    {"prey_code":"TYPCAP","pred_code":"KOBELL","source":98,"target":158},
+    {"prey_code":"ABU","pred_code":"LOXAFR","source":103,"target":0,"length":50},
+    {"prey_code":"ACAFRU","pred_code":"LOXAFR","source":103,"target":1,"length":50},
+    {"prey_code":"ACASEN","pred_code":"LOXAFR","source":103,"target":3},
+    {"prey_code":"ACATOR","pred_code":"LOXAFR","source":103,"target":5},
+    {"prey_code":"ALLRUB","pred_code":"LOXAFR","source":103,"target":13,"length":50},
+    {"prey_code":"ANDGRE","pred_code":"LOXAFR","source":103,"target":16},
+    {"prey_code":"ARI","pred_code":"LOXAFR","source":103,"target":18},
+    {"prey_code":"BALAEG","pred_code":"LOXAFR","source":103,"target":19},
+    {"prey_code":"BLEACA","pred_code":"LOXAFR","source":103,"target":20,"length":50},
+    {"prey_code":"BRASEM","pred_code":"LOXAFR","source":103,"target":23},
+    {"prey_code":"CAPTOM","pred_code":"LOXAFR","source":103,"target":26,"length":50},
+    {"prey_code":"CISQUA","pred_code":"LOXAFR","source":103,"target":32,"length":50},
+    {"prey_code":"CISROT","pred_code":"LOXAFR","source":103,"target":33,"length":50},
+    {"prey_code":"COMMEAFR","pred_code":"LOXAFR","source":103,"target":34,"length":50},
+    {"prey_code":"COMMER","pred_code":"LOXAFR","source":103,"target":35,"length":50},
+    {"prey_code":"COMSCH","pred_code":"LOXAFR","source":103,"target":38,"length":50},
+    {"prey_code":"COROVA","pred_code":"LOXAFR","source":103,"target":40,"length":50},
+    {"prey_code":"CRODIC","pred_code":"LOXAFR","source":103,"target":42,"length":50},
+    {"prey_code":"CROMAC","pred_code":"LOXAFR","source":103,"target":43},
+    {"prey_code":"CYNDAC","pred_code":"LOXAFR","source":103,"target":46},
+    {"prey_code":"FICGLU","pred_code":"LOXAFR","source":103,"target":69,"length":50},
+    {"prey_code":"FICING","pred_code":"LOXAFR","source":103,"target":70,"length":50},
+    {"prey_code":"GREBIC","pred_code":"LOXAFR","source":103,"target":75},
+    {"prey_code":"GREFAL","pred_code":"LOXAFR","source":103,"target":76,"length":50},
+    {"prey_code":"GRETRI","pred_code":"LOXAFR","source":103,"target":77,"length":50},
+    {"prey_code":"HARSCH","pred_code":"LOXAFR","source":103,"target":78},
+    {"prey_code":"HIB","pred_code":"LOXAFR","source":103,"target":82},
+    {"prey_code":"HIBLUN","pred_code":"LOXAFR","source":103,"target":83,"length":50},
+    {"prey_code":"HYPFIL","pred_code":"LOXAFR","source":103,"target":87},
+    {"prey_code":"IBO","pred_code":"LOXAFR","source":103,"target":90,"length":50},
+    {"prey_code":"INDBAS","pred_code":"LOXAFR","source":103,"target":91,"length":50},
+    {"prey_code":"INDHOC","pred_code":"LOXAFR","source":103,"target":92},
+    {"prey_code":"MAETRI","pred_code":"LOXAFR","source":103,"target":106,"length":50},
+    {"prey_code":"PAPCAP","pred_code":"LOXAFR","source":103,"target":118,"length":50},
+    {"prey_code":"PAVASS","pred_code":"LOXAFR","source":103,"target":119,"length":50},
+    {"prey_code":"PHYSEP","pred_code":"LOXAFR","source":103,"target":127,"length":50},
+    {"prey_code":"RHOREV","pred_code":"LOXAFR","source":103,"target":133,"length":50},
+    {"prey_code":"SCLBIR","pred_code":"LOXAFR","source":103,"target":135,"length":50},
+    {"prey_code":"SENEHR","pred_code":"LOXAFR","source":103,"target":137,"length":50},
+    {"prey_code":"SID","pred_code":"LOXAFR","source":103,"target":141},
+    {"prey_code":"SOLINC","pred_code":"LOXAFR","source":103,"target":143},
+    {"prey_code":"SPOIOC","pred_code":"LOXAFR","source":103,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"LOXAFR","source":103,"target":149},
+    {"prey_code":"THETRI","pred_code":"LOXAFR","source":103,"target":154},
+    {"prey_code":"XIMCAF","pred_code":"LOXAFR","source":103,"target":159,"length":50},
+    {"prey_code":"ZIZ","pred_code":"LOXAFR","source":103,"target":160,"length":50},
+    {"prey_code":"ACAFRU","pred_code":"MADKIR","source":105,"target":1,"length":50},
+    {"prey_code":"ACHASP","pred_code":"MADKIR","source":105,"target":7,"length":50},
+    {"prey_code":"ALLRUB","pred_code":"MADKIR","source":105,"target":13,"length":50},
+    {"prey_code":"ALOMAC","pred_code":"MADKIR","source":105,"target":14,"length":50},
+    {"prey_code":"ANDGRE","pred_code":"MADKIR","source":105,"target":16},
+    {"prey_code":"ARI","pred_code":"MADKIR","source":105,"target":18},
+    {"prey_code":"BOSAUG","pred_code":"MADKIR","source":105,"target":21},
+    {"prey_code":"CAPTOM","pred_code":"MADKIR","source":105,"target":26,"length":50},
+    {"prey_code":"CECCIL","pred_code":"MADKIR","source":105,"target":28,"length":50},
+    {"prey_code":"COMMEAFR","pred_code":"MADKIR","source":105,"target":34,"length":50},
+    {"prey_code":"COMMIAFR","pred_code":"MADKIR","source":105,"target":36},
+    {"prey_code":"COROVA","pred_code":"MADKIR","source":105,"target":40,"length":50},
+    {"prey_code":"ERATEN","pred_code":"MADKIR","source":105,"target":65},
+    {"prey_code":"FICGLU","pred_code":"MADKIR","source":105,"target":69,"length":50},
+    {"prey_code":"GRETRI","pred_code":"MADKIR","source":105,"target":77,"length":50},
+    {"prey_code":"HETCON","pred_code":"MADKIR","source":105,"target":81},
+    {"prey_code":"HIB","pred_code":"MADKIR","source":105,"target":82},
+    {"prey_code":"HIBLUN","pred_code":"MADKIR","source":105,"target":83,"length":50},
+    {"prey_code":"HOSOPP","pred_code":"MADKIR","source":105,"target":85,"length":50},
+    {"prey_code":"INDBAS","pred_code":"MADKIR","source":105,"target":91,"length":50},
+    {"prey_code":"INDHOC","pred_code":"MADKIR","source":105,"target":92},
+    {"prey_code":"KAL","pred_code":"MADKIR","source":105,"target":95,"length":50},
+    {"prey_code":"MAETRI","pred_code":"MADKIR","source":105,"target":106,"length":50},
+    {"prey_code":"OCI","pred_code":"MADKIR","source":105,"target":108,"length":50},
+    {"prey_code":"PANMAX","pred_code":"MADKIR","source":105,"target":114},
+    {"prey_code":"SENEHR","pred_code":"MADKIR","source":105,"target":137,"length":50},
+    {"prey_code":"SOLDEN","pred_code":"MADKIR","source":105,"target":142,"length":50},
+    {"prey_code":"SOLINC","pred_code":"MADKIR","source":105,"target":143},
+    {"prey_code":"SOLNIG","pred_code":"MADKIR","source":105,"target":144,"length":50},
+    {"prey_code":"SPOIOC","pred_code":"MADKIR","source":105,"target":147},
+    {"prey_code":"ANDGRE","pred_code":"OUROUR","source":110,"target":16},
+    {"prey_code":"HETCON","pred_code":"OUROUR","source":110,"target":81},
+    {"prey_code":"SPOIOC","pred_code":"OUROUR","source":110,"target":147},
+    {"prey_code":"THETRI","pred_code":"OUROUR","source":110,"target":154},
+    {"prey_code":"ACAFRU","pred_code":"PAPANU","source":117,"target":1,"length":50},
+    {"prey_code":"ACAROB","pred_code":"PAPANU","source":117,"target":2,"length":50},
+    {"prey_code":"ACASEN","pred_code":"PAPANU","source":117,"target":3},
+    {"prey_code":"ACASEY","pred_code":"PAPANU","source":117,"target":4},
+    {"prey_code":"ACAXAN","pred_code":"PAPANU","source":117,"target":6},
+    {"prey_code":"ALBHAR","pred_code":"PAPANU","source":117,"target":10,"length":50},
+    {"prey_code":"ANDGRE","pred_code":"PAPANU","source":117,"target":16},
+    {"prey_code":"BALAEG","pred_code":"PAPANU","source":117,"target":19},
+    {"prey_code":"CAPTOM","pred_code":"PAPANU","source":117,"target":26,"length":50},
+    {"prey_code":"CISROT","pred_code":"PAPANU","source":117,"target":33,"length":50},
+    {"prey_code":"COMMIAFR","pred_code":"PAPANU","source":117,"target":36},
+    {"prey_code":"CRODIC","pred_code":"PAPANU","source":117,"target":42,"length":50},
+    {"prey_code":"CROSPI","pred_code":"PAPANU","source":117,"target":44},
+    {"prey_code":"DIGMIL","pred_code":"PAPANU","source":117,"target":52},
+    {"prey_code":"DIGVEL","pred_code":"PAPANU","source":117,"target":55,"length":50},
+    {"prey_code":"ECHHAP","pred_code":"PAPANU","source":117,"target":59},
+    {"prey_code":"EUPCAN","pred_code":"PAPANU","source":117,"target":67},
+    {"prey_code":"HETCON","pred_code":"PAPANU","source":117,"target":81},
+    {"prey_code":"HIB","pred_code":"PAPANU","source":117,"target":82},
+    {"prey_code":"HYPFIL","pred_code":"PAPANU","source":117,"target":87},
+    {"prey_code":"IPOOBS","pred_code":"PAPANU","source":117,"target":93,"length":50},
+    {"prey_code":"KIGAFR","pred_code":"PAPANU","source":117,"target":97},
+    {"prey_code":"PANCOL","pred_code":"PAPANU","source":117,"target":111},
+    {"prey_code":"PANDEU","pred_code":"PAPANU","source":117,"target":112},
+    {"prey_code":"SARVER","pred_code":"PAPANU","source":117,"target":134},
+    {"prey_code":"SCLBIR","pred_code":"PAPANU","source":117,"target":135,"length":50},
+    {"prey_code":"SOLINC","pred_code":"PAPANU","source":117,"target":143},
+    {"prey_code":"SPOIOC","pred_code":"PAPANU","source":117,"target":147},
+    {"prey_code":"THETRI","pred_code":"PAPANU","source":117,"target":154},
+    {"prey_code":"ARI","pred_code":"PEDCAP","source":121,"target":18},
+    {"prey_code":"CHLPYC","pred_code":"PEDCAP","source":121,"target":30},
+    {"prey_code":"CYNDAC","pred_code":"PEDCAP","source":121,"target":46},
+    {"prey_code":"DIGDIA","pred_code":"PEDCAP","source":121,"target":50},
+    {"prey_code":"DIGTER","pred_code":"PEDCAP","source":121,"target":54},
+    {"prey_code":"ERAEXA","pred_code":"PEDCAP","source":121,"target":64},
+    {"prey_code":"HARSCH","pred_code":"PEDCAP","source":121,"target":78},
+    {"prey_code":"THETRI","pred_code":"PEDCAP","source":121,"target":154},
+    {"prey_code":"ANDGRE","pred_code":"PHAAET","source":125,"target":16},
+    {"prey_code":"CHLGAY","pred_code":"PHAAET","source":125,"target":29},
+    {"prey_code":"CYNDAC","pred_code":"PHAAET","source":125,"target":46},
+    {"prey_code":"ECHHAP","pred_code":"PHAAET","source":125,"target":59},
+    {"prey_code":"ERAEXA","pred_code":"PHAAET","source":125,"target":64},
+    {"prey_code":"HETCON","pred_code":"PHAAET","source":125,"target":81},
+    {"prey_code":"SPOIOC","pred_code":"PHAAET","source":125,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"PHAAET","source":125,"target":149},
+    {"prey_code":"THETRI","pred_code":"PHAAET","source":125,"target":154},
+    {"prey_code":"ABU","pred_code":"PROCAP","source":128,"target":0,"length":50},
+    {"prey_code":"ACAFRU","pred_code":"PROCAP","source":128,"target":1,"length":50},
+    {"prey_code":"ACAROB","pred_code":"PROCAP","source":128,"target":2,"length":50},
+    {"prey_code":"ACATOR","pred_code":"PROCAP","source":128,"target":5},
+    {"prey_code":"ACHASP","pred_code":"PROCAP","source":128,"target":7,"length":50},
+    {"prey_code":"ALBHAR","pred_code":"PROCAP","source":128,"target":10,"length":50},
+    {"prey_code":"ALBU","pred_code":"PROCAP","source":128,"target":11,"length":50},
+    {"prey_code":"ALLRUB","pred_code":"PROCAP","source":128,"target":13,"length":50},
+    {"prey_code":"ALOMAC","pred_code":"PROCAP","source":128,"target":14,"length":50},
+    {"prey_code":"ALOSEC","pred_code":"PROCAP","source":128,"target":15,"length":50},
+    {"prey_code":"ARI","pred_code":"PROCAP","source":128,"target":18},
+    {"prey_code":"BLEACA","pred_code":"PROCAP","source":128,"target":20,"length":50},
+    {"prey_code":"BOTINS","pred_code":"PROCAP","source":128,"target":22},
+    {"prey_code":"BRASEM","pred_code":"PROCAP","source":128,"target":23},
+    {"prey_code":"CAPTOM","pred_code":"PROCAP","source":128,"target":26,"length":50},
+    {"prey_code":"CECCIL","pred_code":"PROCAP","source":128,"target":28,"length":50},
+    {"prey_code":"CHLPYC","pred_code":"PROCAP","source":128,"target":30},
+    {"prey_code":"CISQUA","pred_code":"PROCAP","source":128,"target":32,"length":50},
+    {"prey_code":"CISROT","pred_code":"PROCAP","source":128,"target":33,"length":50},
+    {"prey_code":"COMMEAFR","pred_code":"PROCAP","source":128,"target":34,"length":50},
+    {"prey_code":"COMMOL","pred_code":"PROCAP","source":128,"target":37},
+    {"prey_code":"COMSCH","pred_code":"PROCAP","source":128,"target":38,"length":50},
+    {"prey_code":"COROVA","pred_code":"PROCAP","source":128,"target":40,"length":50},
+    {"prey_code":"CRODIC","pred_code":"PROCAP","source":128,"target":42,"length":50},
+    {"prey_code":"CYNDAC","pred_code":"PROCAP","source":128,"target":46},
+    {"prey_code":"CYP","pred_code":"PROCAP","source":128,"target":47,"length":50},
+    {"prey_code":"CYPH","pred_code":"PROCAP","source":128,"target":48,"length":50},
+    {"prey_code":"DIGMAC","pred_code":"PROCAP","source":128,"target":51},
+    {"prey_code":"DIGTER","pred_code":"PROCAP","source":128,"target":54},
+    {"prey_code":"DIHAMP","pred_code":"PROCAP","source":128,"target":56,"length":50},
+    {"prey_code":"EMICOC","pred_code":"PROCAP","source":128,"target":60,"length":50},
+    {"prey_code":"ERAASP","pred_code":"PROCAP","source":128,"target":62,"length":50},
+    {"prey_code":"ERATEN","pred_code":"PROCAP","source":128,"target":65},
+    {"prey_code":"ERINUB","pred_code":"PROCAP","source":128,"target":66,"length":50},
+    {"prey_code":"FICGLU","pred_code":"PROCAP","source":128,"target":69,"length":50},
+    {"prey_code":"FICING","pred_code":"PROCAP","source":128,"target":70,"length":50},
+    {"prey_code":"GREFAL","pred_code":"PROCAP","source":128,"target":76,"length":50},
+    {"prey_code":"GRETRI","pred_code":"PROCAP","source":128,"target":77,"length":50},
+    {"prey_code":"HETCON","pred_code":"PROCAP","source":128,"target":81},
+    {"prey_code":"HIB","pred_code":"PROCAP","source":128,"target":82},
+    {"prey_code":"HIBLUN","pred_code":"PROCAP","source":128,"target":83,"length":50},
+    {"prey_code":"HOSOPP","pred_code":"PROCAP","source":128,"target":85,"length":50},
+    {"prey_code":"HYPFOR","pred_code":"PROCAP","source":128,"target":88,"length":50},
+    {"prey_code":"IBO","pred_code":"PROCAP","source":128,"target":90,"length":50},
+    {"prey_code":"IPOOBS","pred_code":"PROCAP","source":128,"target":93,"length":50},
+    {"prey_code":"JAS","pred_code":"PROCAP","source":128,"target":94,"length":50},
+    {"prey_code":"KEDFOE","pred_code":"PROCAP","source":128,"target":96,"length":50},
+    {"prey_code":"KYLNER","pred_code":"PROCAP","source":128,"target":99,"length":50},
+    {"prey_code":"MAETRI","pred_code":"PROCAP","source":128,"target":106,"length":50},
+    {"prey_code":"MICKUN","pred_code":"PROCAP","source":128,"target":107},
+    {"prey_code":"OCI","pred_code":"PROCAP","source":128,"target":108,"length":50},
+    {"prey_code":"PANMAX","pred_code":"PROCAP","source":128,"target":114},
+    {"prey_code":"PAPCAP","pred_code":"PROCAP","source":128,"target":118,"length":50},
+    {"prey_code":"PAVASS","pred_code":"PROCAP","source":128,"target":119,"length":50},
+    {"prey_code":"PAVPAT","pred_code":"PROCAP","source":128,"target":120,"length":50},
+    {"prey_code":"PELCAL","pred_code":"PROCAP","source":128,"target":122,"length":50},
+    {"prey_code":"PENMEZ","pred_code":"PROCAP","source":128,"target":123},
+    {"prey_code":"PENSTR","pred_code":"PROCAP","source":128,"target":124},
+    {"prey_code":"PHYSEP","pred_code":"PROCAP","source":128,"target":127,"length":50},
+    {"prey_code":"PUPLAP","pred_code":"PROCAP","source":128,"target":130,"length":50},
+    {"prey_code":"RHOREV","pred_code":"PROCAP","source":128,"target":133,"length":50},
+    {"prey_code":"SCLBIR","pred_code":"PROCAP","source":128,"target":135,"length":50},
+    {"prey_code":"SENDID","pred_code":"PROCAP","source":128,"target":136,"length":50},
+    {"prey_code":"SENEHR","pred_code":"PROCAP","source":128,"target":137,"length":50},
+    {"prey_code":"SENSUF","pred_code":"PROCAP","source":128,"target":138,"length":50},
+    {"prey_code":"SOLDEN","pred_code":"PROCAP","source":128,"target":142,"length":50},
+    {"prey_code":"SOLINC","pred_code":"PROCAP","source":128,"target":143},
+    {"prey_code":"SOLNIG","pred_code":"PROCAP","source":128,"target":144,"length":50},
+    {"prey_code":"SPOPEL","pred_code":"PROCAP","source":128,"target":148,"length":50},
+    {"prey_code":"SPOSTA","pred_code":"PROCAP","source":128,"target":151,"length":50},
+    {"prey_code":"THETRI","pred_code":"PROCAP","source":128,"target":154},
+    {"prey_code":"TURFIS","pred_code":"PROCAP","source":128,"target":157,"length":50},
+    {"prey_code":"XIMCAF","pred_code":"PROCAP","source":128,"target":159,"length":50},
+    {"prey_code":"HETCON","pred_code":"REDRED","source":131,"target":81},
+    {"prey_code":"HYPDIS","pred_code":"REDRED","source":131,"target":86},
+    {"prey_code":"PANMAX","pred_code":"REDRED","source":131,"target":114},
+    {"prey_code":"BOTINS","pred_code":"RHAPUM","source":132,"target":22},
+    {"prey_code":"CHLROX","pred_code":"RHAPUM","source":132,"target":31},
+    {"prey_code":"CYNDAC","pred_code":"RHAPUM","source":132,"target":46},
+    {"prey_code":"DIGMAC","pred_code":"RHAPUM","source":132,"target":51},
+    {"prey_code":"ERATEN","pred_code":"RHAPUM","source":132,"target":65},
+    {"prey_code":"EUSPAS","pred_code":"RHAPUM","source":132,"target":68},
+    {"prey_code":"HARSCH","pred_code":"RHAPUM","source":132,"target":78},
+    {"prey_code":"HETCON","pred_code":"RHAPUM","source":132,"target":81},
+    {"prey_code":"PANCOL","pred_code":"RHAPUM","source":132,"target":111},
+    {"prey_code":"PENMEZ","pred_code":"RHAPUM","source":132,"target":123},
+    {"prey_code":"THETRI","pred_code":"RHAPUM","source":132,"target":154},
+    {"prey_code":"ANDGRE","pred_code":"SYNCAF","source":152,"target":16},
+    {"prey_code":"ARI","pred_code":"SYNCAF","source":152,"target":18},
+    {"prey_code":"BRASEM","pred_code":"SYNCAF","source":152,"target":23},
+    {"prey_code":"CROMAC","pred_code":"SYNCAF","source":152,"target":43},
+    {"prey_code":"CYNDAC","pred_code":"SYNCAF","source":152,"target":46},
+    {"prey_code":"DIGMAC","pred_code":"SYNCAF","source":152,"target":51},
+    {"prey_code":"GREBIC","pred_code":"SYNCAF","source":152,"target":75},
+    {"prey_code":"HARSCH","pred_code":"SYNCAF","source":152,"target":78},
+    {"prey_code":"HIB","pred_code":"SYNCAF","source":152,"target":82},
+    {"prey_code":"HYPFIL","pred_code":"SYNCAF","source":152,"target":87},
+    {"prey_code":"PANCOL","pred_code":"SYNCAF","source":152,"target":111},
+    {"prey_code":"PANMAX","pred_code":"SYNCAF","source":152,"target":114},
+    {"prey_code":"PENMEZ","pred_code":"SYNCAF","source":152,"target":123},
+    {"prey_code":"SID","pred_code":"SYNCAF","source":152,"target":141},
+    {"prey_code":"SOLINC","pred_code":"SYNCAF","source":152,"target":143},
+    {"prey_code":"SPOIOC","pred_code":"SYNCAF","source":152,"target":147},
+    {"prey_code":"SPOPYR","pred_code":"SYNCAF","source":152,"target":149},
+    {"prey_code":"THETRI","pred_code":"SYNCAF","source":152,"target":154},
+    {"prey_code":"ACATOR","pred_code":"TAUORY","source":153,"target":5},
+    {"prey_code":"BOTINS","pred_code":"TAUORY","source":153,"target":22},
+    {"prey_code":"CHLROX","pred_code":"TAUORY","source":153,"target":31},
+    {"prey_code":"COMMOL","pred_code":"TAUORY","source":153,"target":37},
+    {"prey_code":"CYNDAC","pred_code":"TAUORY","source":153,"target":46},
+    {"prey_code":"DIGMIL","pred_code":"TAUORY","source":153,"target":52},
+    {"prey_code":"DUOKIL","pred_code":"TAUORY","source":153,"target":58},
+    {"prey_code":"EUSPAS","pred_code":"TAUORY","source":153,"target":68},
+    {"prey_code":"GREBIC","pred_code":"TAUORY","source":153,"target":75},
+    {"prey_code":"LONERI","pred_code":"TAUORY","source":153,"target":102},
+    {"prey_code":"PANDEU","pred_code":"TAUORY","source":153,"target":112},
+    {"prey_code":"PANMAX","pred_code":"TAUORY","source":153,"target":114},
+    {"prey_code":"SETPAL","pred_code":"TAUORY","source":153,"target":139},
+    {"prey_code":"SETSPH","pred_code":"TAUORY","source":153,"target":140},
+    {"prey_code":"THETRI","pred_code":"TAUORY","source":153,"target":154},
+    {"prey_code":"ECHHAP","pred_code":"TRASCR","source":155,"target":59},
+    {"prey_code":"HETCON","pred_code":"TRASCR","source":155,"target":81},
+    {"prey_code":"HYPFIL","pred_code":"TRASCR","source":155,"target":87},
+    {"prey_code":"THETRI","pred_code":"TRASCR","source":155,"target":154}
+  ],
+  "guides": [
+    {"name": "top_guide", "y": 0},
+    {"name": "bottom_guide", "y": 100},
+    {"name": "carnivore_guide", "x": 450},
+    {"name": "herbivore_guide", "x": 300},
+    {"name": "plant_guide", "x": 125}
+  ],
+  "constraintDefinitions": [
+    {
+      "name": "plants",
+      "sets": {"partition": "group1", "include": [7,8,9,10,11,12,13,14]},
+      "forEach": [
+        {"constraint": "position", "position": "right", "of": "plant_guide", "gap": 200},
+        {"constraint": "position", "position": "left", "of": "herbivore_guide", "gap": 200},
+        {"constraint": "position", "position": "below", "of": "top_guide", "gap": 0},
+        {"constraint": "position", "position": "above", "of": "bottom_guide", "gap": 0},
+        {"constraint": "padding", "amount": 1},
+        {"constraint": "cluster"}
+      ]
+    },
+    {
+      "sets": ["plants"],
+      "forEach": [
+        {"constraint": "order", "axis": "y", "by": "group1", "gap": 35, "reverse": true}
+      ]
+    },
+    {
+      "name": "herbivores",
+      "sets": {"partition": "group1", "include": [3,4,5,6]},
+      "forEach": [
+        {"constraint": "align", "axis": "y"},
+        {"constraint": "position", "position": "right", "of": "herbivore_guide", "gap": 185},
+        {"constraint": "position", "position": "left", "of": "carnivore_guide", "gap": 185},
+        {"constraint": "position", "position": "below", "of": "top_guide", "gap": 250},
+        {"constraint": "position", "position": "above", "of": "bottom_guide", "gap": 50},
+        {"constraint": "hull"}
+      ]
+    },
+    {
+      "sets": ["herbivores"],
+      "forEach": [
+        {"constraint": "order", "axis": "y", "by": "group1", "gap": 55, "reverse": true}
+      ]
+    },
+    {
+      "name": "carnivores",
+      "sets": {"partition": "group1", "include": [1,2]},
+      "forEach": [
+        {"constraint": "align", "axis": "y"},
+        {"constraint": "position", "position": "right", "of": "carnivore_guide", "gap": 185},
+        {"constraint": "position", "position": "below", "of": "top_guide", "gap": 450}
+      ]
+    },
+    {
+      "sets": ["carnivores"],
+      "forEach": [
+        {"constraint": "order", "axis": "x", "by": "group1", "reverse": false, "gap": 40},
+        {"constraint": "order", "axis": "y", "by": "group1", "reverse": true, "gap": 100}
+      ]
+    }
+  ]
+}

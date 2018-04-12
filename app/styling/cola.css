@@ -1,0 +1,164 @@
+body {
+  margin: 0px;
+  display: flex;
+  flex-flow: row;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/*********************** HEADER **********************/
+
+.header {
+  padding: 10px;
+  height: 20px;
+  background: rgba(5,5,5,0.81);
+  color: white;
+}
+
+h1 {
+  font-size: larger;
+  font-family: monospace;
+  margin: 0px;
+  display: inline;
+  font-weight: normal;
+  cursor: default;
+}
+
+.fa.fa-play {
+  padding: 0px 5px;
+  font-size: smaller;
+  cursor: pointer;
+}
+
+.controls {
+  float: right;
+}
+
+.controls span {
+  padding: 0px 2px;
+  cursor: pointer;
+}
+
+/*********************** SPECS ***********************/
+
+.mod_spec {
+  display: flex;
+  flex-flow: column;
+  flex: 0 0 40%;
+}
+
+.specs {
+  display: flex;
+  flex-flow: column;
+  flex: 1 0 auto;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+.specs .spec, .specs .cola-spec {
+  flex: 1 0 auto;
+  outline: none;
+}
+
+.cola-spec {
+  background: #aaa;
+  overflow: scroll;
+}
+
+.separator {
+  background: lightgray;
+  width: 100%;
+  height: 15px;
+  cursor: pointer;
+}
+.separator span {
+  position: relative;
+  left: 50%;
+  padding: 0px 2px;
+  color: rgba(5,5,5,0.81);
+  cursor: pointer;
+}
+
+/*********************** GRAPH ***********************/
+
+.mod_vis {
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column;
+}
+
+.graph {
+  margin: 2px;
+  border: 1px dashed lightgray;
+  flex: 1 0 40%;
+}
+
+.group {
+  stroke: #fff;
+  stroke-width: 1.5px;
+  cursor: move;
+  opacity: 0.25;
+}
+
+.node.visible {
+  stroke-width: 2;
+  stroke: #bbb;
+  stroke-dasharray: 3 3;
+  fill: white !important;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.node.hidden {
+  opacity: 0;
+  cursor: default;
+}
+
+.link {
+  stroke-width: 1;
+  stroke: #bbb;
+}
+
+.link.visible {
+  stroke: #ddd;
+  stroke-dasharray: 3 3;
+  opacity: 1;
+}
+
+.link.hidden {
+  opacity: 0;
+}
+
+marker path {
+  stroke-width: 1.5;
+  stroke: #bbb;
+  /*stroke: #060076;*/
+  stroke: black;
+}
+
+.text-label {
+  cursor: none;
+  font-family: sans-serif;
+}
+
+/****************** STYLING EXTRAS *******************/
+
+.boundary {
+  stroke: #f6c5c5;
+  stroke-width: 2;
+  stroke-dasharray: 6 2;
+}
+
+.boundary-text {
+  fill: #f6c5c5;
+  font-size: 10pt;
+  font-family: monospace;
+}

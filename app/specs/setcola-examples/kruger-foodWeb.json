@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "order": 0, "name": "Cheetah", "type": "carnivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 1, "name": "Lion", "type": "carnivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 2, "name": "Wild Dog", "type": "carnivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 3, "name": "Leopard", "type": "carnivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 0, "name": "Buffalo", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 1, "name": "Duiker", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 2, "name": "Waterbuck", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 3, "name": "Impala", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 4, "name": "African Elephant", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 5, "name": "Giraffe", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 6, "name": "Kudu", "type": "herbivore",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 0, "name": "Creeping Bristle Grass", "type": "plant",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 1, "name": "LM grass", "type": "plant",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 2, "name": "Foxtail Buffalo Grass", "type": "plant",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 3, "name": "Sausage Tree", "type": "plant",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    },
+    {
+      "order": 4, "name": "Marula Tree", "type": "plant",
+      "color": "#AFFF79",
+      "stroke": "blue",
+      "width": 50,
+      "height": 30
+    }
+  ],
+  "links": [
+    {"source": 0, "target": 1, "color": "#060076", "style": "dashed"},
+    {"source": 2, "target": 1, "color": "#060076", "style": "dashed"},
+    {"source": 4, "target": 1, "color": "#060076"},
+    {"source": 5, "target": 0, "color": "#060076"},
+    {"source": 5, "target": 1, "color": "#060076"},
+    {"source": 6, "target": 0, "color": "#060076"},
+    {"source": 6, "target": 1, "color": "#060076"},
+    {"source": 6, "target": 3, "color": "#060076"},
+    {"source": 7, "target": 0, "color": "#060076"},
+    {"source": 7, "target": 1, "color": "#060076"},
+    {"source": 7, "target": 2, "color": "#060076"},
+    {"source": 7, "target": 3, "color": "#060076"},
+    {"source": 9, "target": 1, "color": "#060076"},
+    {"source": 10, "target": 0, "color": "#060076"},
+    {"source": 10, "target": 1, "color": "#060076"},
+    {"source": 11, "target": 4, "color": "#060076"},
+    {"source": 11, "target": 7, "color": "#060076"},
+    {"source": 11, "target": 8, "color": "#060076"},
+    {"source": 12, "target": 4, "color": "#060076"},
+    {"source": 12, "target": 7, "color": "#060076"},
+    {"source": 12, "target": 8, "color": "#060076"},
+    {"source": 13, "target": 4, "color": "#060076"},
+    {"source": 13, "target": 7, "color": "#060076"},
+    {"source": 13, "target": 8, "color": "#060076"},
+    {"source": 14, "target": 5, "color": "#060076"},
+    {"source": 14, "target": 7, "color": "#060076"},
+    {"source": 15, "target": 6, "color": "#060076"},
+    {"source": 15, "target": 8, "color": "#060076"},
+    {"source": 15, "target": 9, "color": "#060076"},
+    {"source": 15, "target": 10, "color": "#060076"}
+  ],
+  "constraintDefinitions": [
+    {
+      "name": "tropic_level",
+      "sets": {"partition": "type"},
+      "forEach": [
+        { "constraint": "order", "axis": "x", "by": "order", "gap": 100 },
+        { "constraint": "align", "axis": "x" }
+     ]
+    },
+    {
+      "sets": ["tropic_level"],
+      "forEach": [{ 
+        "constraint": "order",
+        "axis": "y", 
+        "by": "type",
+        "gap": 100,
+        "order": ["carnivore", "herbivore", "plant"]
+      }]
+    }
+  ]
+}

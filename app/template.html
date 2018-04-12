@@ -1,0 +1,434 @@
+<div class="mod_spec">
+  <div class="header noselect">
+    <h1>SetCoLa</h1>
+    <div class="controls">
+      <select class="sel_examples"></select>
+      <input type="submit" id="submit" value="Update">
+    </div>
+  </div>
+
+  <div class="specs">
+    <div id="editor" class="spec"></div>
+    <div class="separator up">
+      <span class="fa fa-angle-double-up" title="Expand/Collapse Cola Results"></span>
+    </div>
+    <div id="cola-editor" class="cola-spec" style="display: none;" readonly></div>
+  </div>
+</div>
+
+<div class="mod_vis">
+  <div class="header noselect">
+    <h1>Visualization</h1>
+    <span class="fa fa-play" title="Restart"></span>
+    <span class="fa fa-lock" title="Fix Graph" onclick="lock()"></span>
+    <div class="controls">
+      <span class="fa fa-exclamation-circle" title="Error Pane"></span>
+      <span class="fa fa-bug" title="Debug Pane"></span>
+      <span class="fa fa-gear" title="Config Pane"></span>
+      <span class="fa fa-question-circle" title="Information Pane"></span>
+      <span class="fa fa-quote-right" title="Citation Pane"></span>
+    </div>
+  </div>
+  <svg class="graph">
+    <defs>
+      <filter x="0" y="0" width="1" height="1" id="solid">
+        <feFlood flood-color="white"/>
+        <feComposite in="SourceGraphic"/>
+      </filter>
+    </defs>
+  </svg>
+  <div class="temp-region">
+    <div class="error">
+      <span class="fa fa-exclamation-circle"></span>
+      <p></p>
+      <div><span class="label">SetCoLa: </span><span class="value" id="time-setcola"></span></div>
+      <div><span class="label">WebCoLa: </span><span class="value" id="time-webcola"></span></div>
+    </div>
+    <div class="debug">
+      <h1>Constraint Debugging</h1><br>
+      <div class='long-text'>
+        For each <span class='bold'>constraint definition</span>, the number of sets produced by the <span class='bold'>set definition</span> is shown. Expanding this section shows the set name (or id) for each set. Hovering over the set name highlights the base nodes included in that set. The number of constraints defined for each <span class='bold'>constraint application</span> is also shown. These constraints are applied to the nodes within each set. Each SetCoLa constraint is labeled with the number of WebCoLa constraints that are produced. Toggling the checkbox temporarily removes the corresponding WebCoLa constraints produced for that SetCoLa constraint.
+      </div>
+      <div class='debugcontents'></div>
+      <br>
+      <div class='validate'>
+        <h1>Constraint Validation</h1>
+          <div class="label-header left" onclick="inspector.toggleValidation()"><span>Off</span></div>
+          <label class="switch">
+            <input id="check-validon" type="checkbox" onchange="inspector.toggleValidation()">
+            <div class="slider"></div>
+          </label>
+          <div class="label-header" onclick="insepctor.toggleValidation()"><span>On</span></div>
+        <br>
+        <div class='validatecontents'>
+          <p class='explanation'>
+            You can either validate the constraints by counting the number of errors (<span class='bold'>Count</span>) or determining the magnitude of the error by looking at the difference from what is expected (<span class='bold'>Difference</span>). <span class='bold'>Epsilon</span> determines the amount of leway you want to provide on whether or not the position is valid.
+          </p>
+          <div class="label" onclick="validator.validate()"><span>Count</span></div>
+            <label class="switch">
+              <input id="check-validtype" type="checkbox" onchange="validator.validate()">
+              <div class="slider"></div>
+            </label>
+            <div class="label left" onclick="validator.validate()"><span>Difference</span></div><br>
+          <div class="label"><span>Epsilon:</span></div>
+            <input type="range" id="range-epsilon" min="0" max="1" step="0.05" onchange="updateEpsilon()">
+            <span class="value" id="value-epsilon">0.5</span><br>
+        </div>
+      </div>
+    </div>
+    <div class="options">
+      <h1>Config Options</h1><br>
+        <div class="label"><span>Print Debugging Log:</span></div>
+          <input type="checkbox" id="check-debugprint" onchange="updateCheck('debugprint')"><br>
+        <div class="label"><span>Show Layout Nodes:</span></div>
+          <input type="checkbox" id="check-layoutnode" onchange="updateCheck('layoutnode')"><br>
+        <div class="label"><span>Show Layout Boundaries:</span></div>
+          <input type="checkbox" id="check-layoutboundary" onchange="updateCheck('layoutboundary')"><br>
+        <div class="label"><span>Add Set Nodes:</span></div>
+          <input type="checkbox" id="check-setnode" onchange="updateCheck('setnode')"><br>
+
+      <h2>Start</h2>
+        <span class="explanation">(The number of iterations for each step of the cola layout engine.)</span><br>
+        <div class="label"><span>No Constraints:</span></div>
+          <input type="range" id="range-noconst" min="0" max="300" step="5" onchange="updateRange('noconst')">
+          <span class="value" id="value-noconst"></span><br>
+        <div class="label"><span>User Constraints:</span></div>
+          <input type="range" id="range-userconst" min="0" max="300" step="5" onchange="updateRange('userconst')">
+          <span class="value" id="value-userconst"></span><br>
+        <div class="label"><span>Cola Layout Constraints:</span></div>
+          <input type="range" id="range-layoutconst" min="0" max="300" step="5" onchange="updateRange('layoutconst')">
+          <span class="value" id="value-layoutconst"></span><br>
+
+      <h2>Cola Options</h2>
+        <span class="explanation">(Various options for the layout of the graph.)</span><br>
+        <div class="label"><span>Avoid Overlaps:</span></div>
+        <input type="checkbox" id="check-overlaps" onchange="updateCheck('overlaps')" checked><br>
+        <div class="label"><span>Link Distance:</span></div>
+          <input type="range" id="range-linkdist" min="0" max="500" onchange="updateRange('linkdist')">
+          <span class="value" id="value-linkdist"></span><br>
+        <div class="label"><span>Jaccard Link Lengths:</span></div>
+          <input type="range" id="range-jaccard" min="0" max="100" onchange="updateRange('jaccard')">
+          <span class="value" id="value-jaccard"></span><br>
+        <div class="label"><span>Symmetric Lengths:</span></div>
+          <input type="range" id="range-symmetric" min="0" max="100" onchange="updateRange('symmetric')">
+          <span class="value" id="value-symmetric"></span><br>
+        <div class="label"><span>Default Gap:</span></div>
+          <input type="range" id="range-constgap" min="0" max="500" step="5" onchange="updateRange('constgap')">
+          <span class="value" id="value-constgap"></span><br>
+
+      <h2>Graph Options</h2>
+        <span class="explanation">(Graph drawing options.)</span><br>
+        <div class="label"><span>Show Arrowheads:</span></div>
+          <input type="checkbox" id="check-arrows" onchange="updateCheck('arrows')"><br>
+        <div class="label"><span>Curved Links:</span></div>
+          <input type="checkbox" id="check-curved" onchange="updateCheck('curved')"><br>
+        <div class="label"><span>Multiple Links:</span></div>
+          <input type="checkbox" id="check-multiple" onchange="updateCheck('multiple')"><br>
+        <div class="label"><span>Show Edge Labels:</span></div>
+          <input type="checkbox" id="check-edgelabels" onchange="updateCheck('edgelabels')"><br>
+        <div class="label"><span>Node Size:</span></div>
+          <input type="range" id="range-nodesize" min="5" max="50" onchange="updateRange('nodesize')">
+          <span class="value" id="value-nodesize"></span><br>
+        <div class="label"><span>Node Padding:</span></div>
+          <input type="range" id="range-nodepad" min="0" max="50" onchange="updateRange('nodepad')">
+          <span class="value" id="value-nodepad"></span><br>
+        <div class="label"><span>Fill Property:</span></div>
+          <input type="text" id="text-fillprop" onchange="updateText('fillprop')"><br>
+        <div class="label"><span>Hover Label Property:</span></div>
+          <input type="text" id="text-labelprop" onchange="updateText('labelprop')"><br>
+    </div>
+    <div class="help">
+      <h1>SetCoLa</h1>
+      <p class='long-text'>
+      A SetCoLa specification contains multiple constraint definitions under the heading <span>"constraintDefinitions"</span> that specify the desired behavior for the graph layout. You may also specify a set of <span>"guides"</span> (reference elements that serve as positional anchors), which is a list of nodes that include an <span>"x"</span> and/or <span>"y"</span> property.
+      </p>
+
+      <h2>Constraint Definition</h2>
+      <div>
+        <div class="label"><span>"name":</span></div>
+        <div class="def">
+          <span class="type">String</span>
+        </div>
+      </div>
+      <div>
+        <div class="label" style="margin-bottom: 54px">
+          <span>"sets":</span>
+        </div>
+        <div class="def">
+          <span>{</span>
+          <span>"partition":</span>
+          <span class="type">String</span>
+          <span>, "include":</span>
+          <span class="type">[Value]</span>
+          <span>, "exclude":</span>
+          <span class="type">[Value]</span>
+          <span>}</span>
+
+          <br>
+
+          <span class="sep">||</span>
+
+          <span class="type">[</span>
+          <span>{</span>
+          <span>"expr": </span> 
+          <span class="type">String</span>
+          <span>, "name": </span> 
+          <span class="type">String</span>
+          <span>}</span>
+          <span class="type">]</span> 
+
+          <br>
+
+          <span class="sep">||</span>
+
+          <span>{</span>
+          <span>"collect":</span>
+          <span class="type">[</span>
+          <span class="type">String</span>
+          <span class="type">]</span>
+          <span>}</span>
+
+          <br>
+
+          <span class="sep">||</span>
+
+          <span class="type">[</span>
+          <span class="type">String</span>
+          <span class="type">]</span>
+
+        </div>
+      </div>
+      <div>
+        <div class="label"><span>"forEach":</span></div>
+        <div class="def">
+          <span class="type">[Constraint]</span>
+        </div>
+      </div>
+
+      <h2>Constraint: Alignment</h2>
+        <p class="explanation">
+          (Align nodes along a common axis.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"align"</span></div>
+        </div>
+        <div>
+          <div class="label"><span>"axis":</span></div>
+          <div class="def">
+            <span>"x"</span>
+            <span class="sep">||</span>
+            <span>"y"</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"orientation":</span></div>
+          <div class="def">
+            <span>"center"</span>
+            <span class="sep">||</span>
+            <span>"left"</span>
+            <span class="sep">||</span>
+            <span>"right"</span>
+            <span class="sep">||</span>
+            <span>"above"</span>
+            <span class="sep">||</span>
+            <span>"below"</span>
+          </div>
+        </div>
+      <h2>Constraint: Position</h2>
+        <p class="explanation">
+          (Position nodes relative to a guide or group.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"position"</span></div>
+        </div>
+        <div>
+          <div class="label"><span>"position":</span></div>
+          <div class="def">
+            <span>"left"</span>
+            <span class="sep">||</span>
+            <span>"right"</span>
+            <span class="sep">||</span>
+            <span>"above"</span>
+            <span class="sep">||</span>
+            <span>"below"</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"of":</span></div>
+          <div class="def">
+            <span class="type">Guide</span>
+            <span class="sep">||</span>
+            <span class="type">SetName</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"gap":</span></div>
+          <div class="def">
+            <span class="type">Number</span>
+          </div>
+        </div>
+      <h2>Constraint: Order</h2>
+        <p class="explanation">
+          (Sort nodes based on one of their properties.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"order"</span></div>
+        </div>
+        <div>
+          <div class="label"><span>"axis":</span></div>
+          <div class="def">
+            <span>"x"</span>
+            <span class="sep">||</span>
+            <span>"y"</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"by":</span></div>
+          <div class="def">
+            <span class="type">String</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"order":</span></div>
+          <div class="def">
+            <span class="type">[String]</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"reverse":</span></div>
+          <div class="def">
+            <span class="type">Boolean</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"band":</span></div>
+          <div class="def">
+            <span class="type">Number</span>
+          </div>
+        </div>
+      <h2>Constraint: Circle</h2>
+        <p class="explanation">
+          (Arrange the nodes into a circle.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"circle"</span></div>
+        </div>
+        <div>
+          <div class="label"><span>"around":</span></div>
+          <div class="def">
+            <span>"center"</span>
+            <span class="sep">||</span>
+            <span class="type">Guide</span>
+          </div>
+        </div>
+        <div>
+          <div class="label"><span>"radius":</span></div>
+          <div class="def">
+            <span class="type">Number</span>
+          </div>
+        </div>
+      <h2>Constraint: Cluster</h2>
+        <p class="explanation">
+          (Create a dense grouping of nodes.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"cluster"</span></div>
+        </div>
+      <h2>Constraint: Hull</h2>
+        <p class="explanation">
+          (Enclose nodes within a boundary.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"hull"</span></div>
+        </div>
+      <h2>Constraint: Padding</h2>
+        <p class="explanation">
+          (Add padding around each node.)
+        </p>
+        <div>
+          <div class="label"><span>"constraint":</span></div>
+          <div class="def"><span>"padding"</span></div>
+        </div>
+        <div>
+          <div class="label"><span>"amount":</span></div>
+          <div class="def">
+            <span class="type">Number</span>
+          </div>
+        </div>
+
+      <h2>Built-In Node Properties</h2>
+        <p class="explanation">
+          (Built-in node properties.)
+        </p>
+        <div>
+          <div class="label"><span>"_id":</span></div>
+          <span class="type">Number</span>
+          <p class="explanation"> -- The index of the node in the list of graph nodes. A unique id.</p> 
+        </div>
+        <div>
+          <div class="label"><span>"depth":</span></div>
+          <span class="type">Number</span>
+          <p class="explanation"> -- The node depth. Only for acylcic graphs.</p> 
+        </div>
+        <div>
+          <div class="label"><span>"sources":</span></div>
+          <span class="type">[Node]</span>
+          <p class="explanation"> -- All nodes that have edges for which the current node is the taret (e.g., parents).</p> 
+        </div>
+        <div>
+          <div class="label"><span>"targets":</span></div>
+          <span class="type">[Node]</span>
+          <p class="explanation"> -- All nodes that have edges for which the current node is the source (e.g., children).</p> 
+        </div>
+        <div>
+          <div class="label"><span>"neighbors":</span></div>
+          <span class="type">[Node]</span>
+          <p class="explanation"> -- The set of nodes connected to the current node.</p> 
+        </div>
+        <div>
+          <div class="label"><span>"incoming":</span></div>
+          <span class="type">[Edge]</span>
+          <p class="explanation"> -- The edges for which the current node is the target.</p> 
+        </div>
+        <div>
+          <div class="label"><span>"outgoing":</span></div>
+          <span class="type">[Edge]</span>
+          <p class="explanation"> -- The edges for which the current node is the source.</p> 
+        </div>
+        <div>
+          <div class="label"><span>"edges":</span></div>
+          <span class="type">[Edge]</span>
+          <p class="explanation"> -- All edgest that contain the current node.</p> 
+        </div>
+        <div>
+          <div class="label"><span>"degree":</span></div>
+          <span class="type">Number</span>
+          <p class="explanation"> -- The number of nodes connected to the current node.</p> 
+        </div>  
+    </div>
+    <div class="cite">
+      <h1>SetCoLa</h1>
+      <p class='long-text'>
+        SetCoLa is a domain-specific language for specifying high-level constraints for graph layout relative to the properties of the backing data. SetCoLa is a research project from the <a class='paragraphlink' href='https://www.cs.washington.edu/'>University of Washington</a> in the Paul G. Allen School for Computer Science & Engineering. If you are interested in this work, please take a look at our paper: <span class='papertitle'>"SetCoLa: High-Level Constraints for Graph Layout"</span> or our Github <span class='fa fa-github'></span> respository at <a class='url' href='https://github.com/uwdata/setcola'>https://github.com/uwdata/setcola</a>.
+      </p>
+      <div class="publication">
+        <img class="link" src="https://homes.cs.washington.edu/~jhoffs/website/resources/images/setcola-thumbnail.png" alt="SetCoLa Thumbnail">
+        <div class="paper">
+          <p class="title">SetCoLa: High-Level Constraints for Graph Layout.</p><br>
+          <p class="authors">Jane Hoffswell, Alan Borning, Jeffrey Heer.</p><br>
+          <p class="venue">Computer Graphics Forum (Proc. EuroVis), 2018.</p>
+          <p style="color:gray"> | </p>
+          <a class="pdf" href="https://homes.cs.washington.edu/~jhoffs/website/resources/papers/2018-SetCoLa-EuroVis.pdf">PDF</a>
+          <p style="color:gray"> | </p>
+          <a class="link bibtex-text" onclick="showBibTeX(event, 'SetCoLa')">BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
