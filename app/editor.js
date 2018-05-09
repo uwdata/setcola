@@ -6,7 +6,7 @@ var editor = {};
 /**********************************************************************/
 
 editor.init = function() {
-  d3.text('template.html', function(err, text) { 
+  d3.text('app/template.html', function(err, text) { 
 
     d3.select('body').html(text); 
 
@@ -147,7 +147,7 @@ editor.load = function() {
   var example = exampleSel.options[exampleSel.selectedIndex].value;
   var type = exampleSel.options[exampleSel.selectedIndex].parentNode.label;
   var typeStr =  (type + '').toLowerCase()
-  var PATH = 'specs/' + (type ?  typeStr + '-examples/' : '') + example + '.json';
+  var PATH = 'app/specs/' + (type ?  typeStr + '-examples/' : '') + example + '.json';
   editor.example = example;
 
   renderer.setStyle(example);
