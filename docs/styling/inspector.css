@@ -298,7 +298,7 @@
     width: 175px;
   }
 
-  .temp-region.help span {
+  .temp-region.help span.tt {
     font-size: 10pt;
     font-family: monospace;
     font-weight: normal;
