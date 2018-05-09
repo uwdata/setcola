@@ -38,6 +38,14 @@ h1 {
   cursor: pointer;
 }
 
+.status {
+  padding: 0px 5px;
+  font-family: monospace;
+  font-size: 12pt;
+  color: #ffcb13;
+  opacity: 0;
+}
+
 .controls {
   float: right;
 }
@@ -90,15 +98,15 @@ h1 {
 /*********************** GRAPH ***********************/
 
 .mod_vis {
-  flex: 1 0 auto;
   display: flex;
   flex-flow: column;
+  flex: 0 0 60%;
 }
 
 .graph {
   margin: 2px;
   border: 1px dashed lightgray;
-  flex: 1 0 40%;
+  flex: 1 1 60%;
 }
 
 .group {
@@ -112,7 +120,7 @@ h1 {
   stroke-width: 2;
   stroke: #bbb;
   stroke-dasharray: 3 3;
-  fill: white !important;
+  fill: pink !important;
   opacity: 1;
   cursor: pointer;
 }

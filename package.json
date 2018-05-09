@@ -1,0 +1,13 @@
+{
+  "name": "SetCoLa",
+  "version": "1.0.0",
+  "description": "SetCoLa is a domain specific language for specifying graph layout constraints. The SetCoLa compiler generates constraints for WebCoLa.",
+  "main": "index.js",
+  "repository": "https://github.com/uwdata/setcola.git",
+  "author": "Jane Hoffswell <jhoffs@cs.washington.edu>, Alan Borning, and Jeffrey Heer",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.58.2",
+    "rollup-plugin-node-resolve": "^3.3.0"
+  }
+}

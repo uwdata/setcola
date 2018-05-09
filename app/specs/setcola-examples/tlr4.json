@@ -232,12 +232,12 @@
     },
     {
       "name": "additional spacing",
-      "sets": {"partition": "type", "ignore": ["unknown", "downstream genes"]},
+      "sets": {"partition": "type", "exclude": ["unknown", "downstream genes"]},
       "forEach": [{"constraint": "padding", "amount": 18}]
     },
     {
       "name": "layer",
-      "sets": [{"partition": "type", "ignore": ["unknown"]}],
+      "sets": [{"partition": "type", "exclude": ["unknown"]}],
       "forEach": [
         {
           "constraint": "order",

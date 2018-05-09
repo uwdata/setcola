@@ -31,12 +31,12 @@ validator.validate = function() {
 /************* Validate Graph on Cola Constraints **************/
 
 function diffErrors() {
-  var nodes = graph.spec.nodes;
+  var nodes = renderer.setcola.nodes;
   validator.unsatisfiable = 0;
   validator.maxError = 0;
 
   validator.errors = {};
-  graph.spec.constraints.forEach(function(constraint) {
+  renderer.setcola.constraints.forEach(function(constraint) {
 
     constraint.unsat = false;
 
@@ -87,12 +87,12 @@ function diffErrors() {
 };
 
 function countErrors() {
-  var nodes = graph.spec.nodes;
+  var nodes = renderer.setcola.nodes;
   validator.unsatisfiable = 0;
   validator.maxError = 0;
 
   validator.errors = {};
-  graph.spec.constraints.forEach(function(constraint) {
+  renderer.setcola.constraints.forEach(function(constraint) {
 
     constraint.unsat = false;
 
@@ -138,7 +138,7 @@ function countErrors() {
 };
 
 validator.getInvalidConstraints = function(node) {
-  var unsatisfiable = graph.spec.constraints.filter(function(constraint) {
+  var unsatisfiable = renderer.setcola.constraints.filter(function(constraint) {
 
     var invalid = false;
     if(!constraint.unsat) return false;
@@ -165,9 +165,9 @@ validator.getInvalidConstraints = function(node) {
 };
 
 validator.constraintsOfNode = function(node) {
-  if(!(node instanceof Object)) node = graph.spec.nodes[node];
+  if(!(node instanceof Object)) node = renderer.setcola.nodes[node];
 
-  var constraints = graph.spec.constraints.filter(function(constraint) {
+  var constraints = renderer.setcola.constraints.filter(function(constraint) {
 
     var containsNode = false;
 

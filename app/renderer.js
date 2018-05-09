@@ -2,8 +2,8 @@ var renderer = {};
 var style = styling;
 
 var RANGES = ['noconst', 'userconst', 'layoutconst', 'linkdist', 'jaccard', 'symmetric', 'constgap', 'nodesize', 'nodepad'];
-var CHECKS = ['debugprint', 'layoutnode', 'layoutboundary', 'setnode', 'overlaps', 'arrows', 'curved', 'multiple', 'edgelabels'];
-var TEXTS = ['fillprop'];
+var CHECKS = ['debugprint', 'layoutnode', 'layoutboundary', 'overlaps', 'arrows', 'curved', 'multiple', 'edgelabels'];
+var TEXTS = ['edgeref', 'fillprop'];
 
 /***************************************************************/
 /************************ GRAPH DRAWING ************************/
@@ -12,6 +12,7 @@ var TEXTS = ['fillprop'];
 renderer.init = function() {
   renderer.options = {};
   renderer.setOptions(styling.options);
+  renderer.hidden_constraints = [];
 };
 
 renderer.setOptions = function(options) {
@@ -56,12 +57,12 @@ renderer.setStyle = function(name) {
   if(style.options) renderer.setOptions(style.options);
 };
 
-renderer.draw = function() {
+renderer.draw = function(layout) {
   if(renderer.options['debugprint']) console.log('  Drawing the graph...');
-  graph.spec.nodes.forEach(graph.setColor);
+  renderer.setcola = layout;
 
-  // Reset the links!
-  if(graph.originalLinks) graph.spec.links = graph.originalLinks;
+  // Set the default graph options if they do not exist.
+  renderer.defaultOptions(layout);
 
   // Clear the old graph
   d3.select('.graph').selectAll('g').remove();
@@ -71,30 +72,24 @@ renderer.draw = function() {
       height = d3.select('svg').style('height').replace('px', '');
   renderer.colajs = cola.d3adaptor(d3).size([width, height]);
 
-  // Update the graph nodes with style properties
-  graph.spec.nodes.map(graph.setSize);
-
   // Add the graph to the layout
-  if(graph.spec.nodes) renderer.colajs.nodes(graph.spec.nodes);
-  if(graph.spec.links) {
-    var links = graph.spec.links.filter(function(link) { return !link.circle; });
-    renderer.colajs.links(links);
+  if(renderer.setcola.nodes) renderer.colajs.nodes(renderer.setcola.nodes);
+  if(renderer.setcola.links) {
+    renderer.colajs.links(renderer.setcola.links);
     
     // Apply the appropriate edge link to circle edges
-    renderer.colajs.linkDistance(function(d) { 
-      return d.length ? d.length : 100; 
-    });
+    renderer.colajs.linkDistance(function(d) { return d.length ? d.length : 100; });
 
     // For all the links that were filtered out prior to the layout, fix the node linking
-    graph.spec.links.forEach(function(link) {
+    renderer.setcola.links.forEach(function(link) {
       if(typeof link.source === 'number' || typeof link.target === 'number') {
-        link.source = graph.spec.nodes[link.source];
-        link.target = graph.spec.nodes[link.target];
+        link.source = renderer.setcola.nodes[link.source];
+        link.target = renderer.setcola.nodes[link.target];
       }
     });
   }
-  if(graph.spec.groups) renderer.colajs.groups(graph.spec.groups);
-  if(graph.spec.constraints) renderer.colajs.constraints(graph.spec.constraints);
+  if(renderer.setcola.groups) renderer.colajs.groups(renderer.setcola.groups);
+  if(renderer.setcola.constraints) renderer.colajs.constraints(renderer.setcola.constraints);
 
   // Start the cola.js layout
   renderer.colajs
@@ -114,41 +109,53 @@ renderer.draw = function() {
   if(renderer.options['symmetric'] != 0) renderer.colajs.symmetricDiffLinkLengths(renderer.options['symmetric']);
   
   // Start the layout engine.
-  renderer.colajs.start(renderer.options['noconst'],renderer.options['userconst'],renderer.options['layoutconst']);
-  renderer.colajs.on('tick', renderer.tick);
+  renderer.colajs
+    .start(renderer.options['noconst'],renderer.options['userconst'],renderer.options['layoutconst'])
+    .on('tick', renderer.tick);
 
   // Set up zoom behavior on the graph svg.
-  var zoom = d3.behavior.zoom().scaleExtent([0.25, 2]).on('zoom', zoomed);
+  renderer.zoom = d3.behavior.zoom().scaleExtent([0.25, 2]).on('zoom', zoomed);
 
   var svg = d3.select('.graph').append('g')
       .attr('transform', 'translate(0,0)')
-    .call(zoom)
+    .call(renderer.zoom)
     .on('click', renderer.opacity);
 
   // Draw an invisible background to capture zoom events
   var rect = d3.select('.graph').select('g').append('rect')
+      .attr('id', 'zoomr')
       .attr('width', width)
       .attr('height', height)
       .style('fill', 'white');
 
   // Draw the graph
-  renderer.svg = svg.append('g');
+  renderer.svg = svg.append('g').attr('id', 'zoomg');
   renderer.options['curved'] ? renderer.drawCurvedLinks() : renderer.options['multiple'] ? renderer.drawMultipleLinks() : renderer.drawLinks();
-  if(graph.spec.groups) renderer.drawGroups();
+  if(renderer.setcola.groups) renderer.drawGroups();
   renderer.drawNodes();
 
   // Draw the boundaries
   if(renderer.options['layoutboundary']) renderer.showLayoutBoundaries();
+
+  renderer.centerGraph();
+};
+
+renderer.restart = function() {
+  renderer.colajs
+    .nodes(renderer.setcola.nodes)
+    .links(renderer.setcola.links)
+    .constraints(renderer.setcola.constraints)
+    .start(renderer.options['noconst'],renderer.options['userconst'],renderer.options['layoutconst']);
 };
 
 renderer.drawLinks = function() {
 
   renderer.links = renderer.svg.selectAll('.link')
-      .data(graph.spec.links)
+      .data(renderer.setcola.links)
     .enter().append('line')
       .attr('class', function(d) {
         var className = 'link';
-        if(d.temp) {
+        if(d._temp) {
           if(renderer.options['layoutnode']) className += ' visible';
           if(!renderer.options['layoutnode']) className += ' hidden';
         }
@@ -156,7 +163,7 @@ renderer.drawLinks = function() {
       })
       .style('stroke', function(d) { 
         if(d.guide) return 'red';
-        if(renderer.options['layoutnode'] && d.temp) return '#ddd';
+        if(renderer.options['layoutnode'] && d._temp) return '#ddd';
         return d.color; 
       })
       .style('stroke-dasharray', function(d) {
@@ -169,16 +176,16 @@ renderer.drawLinks = function() {
 
 renderer.drawCurvedLinks = function() {
   renderer.diagonal = d3.svg.diagonal()
-        .source(function(d) { return {'x':d.source.x, 'y':d.source.y}; })            
-        .target(function(d) { return {'x':d.target.x, 'y':d.target.y}; })
+        .source(function(d) { return {'x':d.source.x - d.source.pad, 'y':d.source.y - d.source.pad}; })            
+        .target(function(d) { return {'x':d.target.x - d.target.pad, 'y':d.target.y - d.target.pad}; })
         .projection(function(d) { return [d.x, d.y]; });
 
   renderer.links = renderer.svg.selectAll('.link')
-      .data(graph.spec.links)
+      .data(renderer.setcola.links)
     .enter().append('path')
       .attr('class', function(d) {
         var className = 'link';
-        if(d.temp) {
+        if(d._temp) {
           if(renderer.options['layoutnode']) className += ' visible';
           if(!renderer.options['layoutnode']) className += ' hidden';
         }
@@ -197,9 +204,9 @@ renderer.drawCurvedLinks = function() {
 
 var countSiblingLinks = function(source, target) {
   var count = 0;
-  for(var i = 0; i < graph.spec.links.length; ++i) {
-    if((graph.spec.links[i].source._id == source._id && graph.spec.links[i].target._id == target._id)
-    || (graph.spec.links[i].source._id == target._id && graph.spec.links[i].target._id == source._id)) {
+  for(var i = 0; i < renderer.setcola.links.length; ++i) {
+    if((renderer.setcola.links[i].source._id == source._id && renderer.setcola.links[i].target._id == target._id)
+    || (renderer.setcola.links[i].source._id == target._id && renderer.setcola.links[i].target._id == source._id)) {
       count++;
     }
   };
@@ -208,11 +215,11 @@ var countSiblingLinks = function(source, target) {
 
 var getSiblingLinks = function(source, target) {
   var siblings = [];
-  for(var i = 0; i < graph.spec.links.length; ++i) {
+  for(var i = 0; i < renderer.setcola.links.length; ++i) {
     var found = false;
-    if(graph.spec.links[i].source._id == source._id && graph.spec.links[i].target._id == target._id) found = true;
-    else if(graph.spec.links[i].source._id == target._id && graph.spec.links[i].target._id == source._id) found = true;
-    if(found) siblings.push(graph.spec.links[i]._id);
+    if(renderer.setcola.links[i].source._id == source._id && renderer.setcola.links[i].target._id == target._id) found = true;
+    else if(renderer.setcola.links[i].source._id == target._id && renderer.setcola.links[i].target._id == source._id) found = true;
+    if(found) siblings.push(renderer.setcola.links[i]._id);
   }
   return siblings;
 };
@@ -220,10 +227,10 @@ var getSiblingLinks = function(source, target) {
 function arcPath(leftHand, d) {
 
   var padding = d.pad || 0;
-  var x1 = leftHand ? d.source.x : d.target.x,
-      y1 = leftHand ? d.source.y : d.target.y,
-      x2 = leftHand ? d.target.x : d.source.x,
-      y2 = leftHand ? d.target.y : d.source.y,
+  var x1 = leftHand ? d.source.x - d.source.pad : d.target.x - d.target.pad,
+      y1 = leftHand ? d.source.y - d.source.pad : d.target.y - d.target.pad,
+      x2 = leftHand ? d.target.x - d.target.pad : d.source.x - d.source.pad,
+      y2 = leftHand ? d.target.y - d.target.pad : d.source.y - d.source.pad,
       dx = x2 - x1,
       dy = y2 - y1,
       dr = Math.sqrt(dx * dx + dy * dy),
@@ -266,11 +273,11 @@ function arcPath(leftHand, d) {
 renderer.drawMultipleLinks = function() {
 
   renderer.links = renderer.svg.selectAll('.link')
-      .data(graph.spec.links)
+      .data(renderer.setcola.links)
     .enter().append('path')
       .attr('class', function(d) {
         var className = 'link';
-        if(d.temp) {
+        if(d._temp) {
           if(renderer.options['layoutnode']) className += ' visible';
           if(!renderer.options['layoutnode']) className += ' hidden';
         }
@@ -286,7 +293,7 @@ renderer.drawMultipleLinks = function() {
 
 renderer.drawLinkLabels = function() {
   renderer.edgepaths = renderer.svg.selectAll('.edgepath')
-      .data(graph.spec.links)
+      .data(renderer.setcola.links)
     .enter().append('path')
       .attr('d', function(d) { return arcPath(true, d); })
       .attr('class', 'edgepath')
@@ -298,7 +305,7 @@ renderer.drawLinkLabels = function() {
       .style('pointer-events', 'none');
 
   renderer.edgelabels = renderer.svg.selectAll('.edgelabel')
-      .data(graph.spec.links)
+      .data(renderer.setcola.links)
     .enter().append('text')
       .style('pointer-events', 'none')
       .attr('class', 'edgelabel')
@@ -344,7 +351,7 @@ renderer.drawArrowheads = function() {
   
   renderer.links
       .style('marker-end', function(d) {
-        if(d.temp) return 'none';
+        if(d._temp) return 'none';
         if(d.source._id === d.target._id) return 'none';
         return 'url(#' + 'arrowhead' + ')';
       })
@@ -360,11 +367,11 @@ renderer.drawArrowheads = function() {
 
 renderer.drawNodes = function() {
   renderer.nodes = renderer.svg.selectAll('.node')
-      .data(graph.spec.nodes)
+      .data(renderer.setcola.nodes)
     .enter().append('g')
       .attr('class', function(d) {
         var className = 'node';
-        if(!d.temp) className += ' basic';
+        if(!d._temp) className += ' basic';
         return className;
       })
     .call(renderer.colajs.drag);
@@ -372,13 +379,19 @@ renderer.drawNodes = function() {
   renderer.nodes.append('rect')
       .attr('class', function(d) {
         var className = 'node';
-        if(d.temp) {
+        if(d._temp) {
           className += (renderer.options['layoutnode']) ? ' visible' : ' hidden';
         }
         return className;
       })
-      .attr('width', function(d) { return d.width - 2 * d.padding; })
-      .attr('height', function(d) { return d.height - 2 * d.padding; })
+      .attr('width', function(d) { 
+        if(d._temp && renderer.options['layoutnode']) return 10;
+        return d._width; 
+      })
+      .attr('height', function(d) { 
+        if(d._temp && renderer.options['layoutnode']) return 10;
+        return d._height; 
+      })
       .attr('rx', function(d) {
         if(renderer.options['cornerradius'] == 'default') {
           return d.size ? d.size : renderer.options['nodesize'];
@@ -391,8 +404,8 @@ renderer.drawNodes = function() {
         }
         return renderer.options['cornerradius'];
       })
-      .style('fill', graph.getColor)
-      .style('stroke', graph.getStroke);
+      .style('fill', graph.nodeColor)
+      .style('stroke', graph.nodeStroke);
 
   // Prevent interaction with nodes from causing pan on background
   renderer.nodes
@@ -400,47 +413,46 @@ renderer.drawNodes = function() {
     .on('mousedown', function() { d3.event.stopPropagation(); })
     .on('mousemove', function() { d3.event.stopPropagation(); });
 
-  renderer.nodes.append('title').text(graph.getLabel);
+  renderer.nodes.append('title').text(graph.hoverLabel);
 
   if(renderer.options['showLabels']) {
     var nodes = renderer.nodes;
     if(!renderer.options['layoutnode']) {
       nodes = d3.selectAll('.basic');
     }
-    var text = nodes.append('text').text(style.label);
+    var text = nodes.append('text').text(style.labelText);
     text.attr('class', 'text-label')
-        .attr('dx', style.dx)
-        .attr('dy', style.dy)
+        .attr('dx', style.labeldx)
+        .attr('dy', style.labeldy)
         .attr('filter', 'url(#solid)')
-        .style('fill', style.color)
+        .style('fill', style.labelColor)
         .style('opacity', 0.7)
-        .style('font-size', style.size)
-        .style('font-style', style.style);
+        .style('font-size', style.labelSize)
+        .style('font-style', style.labelStyle);
   } else if(renderer.options['showLabelsOnTop']) {
     renderer.textG = renderer.svg.selectAll('.text-label')
-      .data(graph.spec.nodes)
+      .data(renderer.setcola.nodes)
     .enter().append('g')
       .attr('class', function(d) {
         var className = 'textNode';
-        if(!d.temp) className += ' basic';
+        if(!d._temp) className += ' basic';
         return className;
       });
-    var text = renderer.textG.append('text').text(style.label);
+    var text = renderer.textG.append('text').text(style.labelText);
     text.attr('class', 'text-label')
-        .attr('dx', style.dx)
-        .attr('dy', style.dy)
+        .attr('dx', style.labeldx)
+        .attr('dy', style.labeldy)
         .attr('filter', 'url(#solid)')
-        .style('fill', style.color)
+        .style('fill', style.labelColor)
         .style('opacity', 0.7)
-        .style('font-size', style.size)
-        .style('font-style', style.style);
+        .style('font-size', style.labelSize)
+        .style('font-style', style.labelStyle);
   }
-  
 };
 
 renderer.drawGroups = function() {
   renderer.groups = renderer.svg.selectAll('.group')
-        .data(graph.spec.groups)
+        .data(renderer.setcola.groups)
       .enter().append('rect')
         .attr('rx', 8)
         .attr('ry', 8)
@@ -465,29 +477,31 @@ renderer.tick = function() {
     renderer.links.attr('d', function(d) { return arcPath(true, d); });
   } else {
     renderer.links
-        .attr('x1', function (d) { return d.source.x; })
-        .attr('y1', function (d) { return d.source.y; })
-        .attr('x2', function (d) { return d.target.x; })
-        .attr('y2', function (d) { return d.target.y; });
+        .attr('x1', function (d) { return d.source.x - d.source.pad; })
+        .attr('y1', function (d) { return d.source.y - d.source.pad; })
+        .attr('x2', function (d) { return d.target.x - d.target.pad; })
+        .attr('y2', function (d) { return d.target.y - d.target.pad; });
   }
 
+  // Update the nodes
   renderer.nodes.attr('transform', function(d) { 
     if(d.fixed) {
       return 'translate(' + d.x + ',' + d.y + ')';
     } else {
-      var x = d.x - d.width / 2 + d.padding;
-      var y = d.y - d.height / 2 + d.padding;
+      var x = d.x - d.width / 2;
+      var y = d.y - d.height / 2;
       return 'translate(' + x + ',' + y + ')'; 
     }
   });
 
+  // Update the labels
   if(renderer.options['showLabelsOnTop']) {
     renderer.textG.attr('transform', function(d) { 
       if(d.fixed) {
         return 'translate(' + d.x + ',' + d.y + ')';
       } else {
-        var x = d.x - d.width / 2 + d.padding;
-        var y = d.y - d.height / 2 + d.padding;
+        var x = d.x - d.width / 2;
+        var y = d.y - d.height / 2;
         return 'translate(' + x + ',' + y + ')'; 
       }
     });
@@ -508,6 +522,7 @@ renderer.tick = function() {
     });
   }
 
+  // Update the boundaries
   if(renderer.options['layoutboundary']) renderer.showLayoutBoundaries();
 
   // Update the groups
@@ -520,7 +535,7 @@ renderer.tick = function() {
 };
 
 function lock() {
-  var nodes = graph.spec.nodes.map(function(node) {
+  var nodes = renderer.setcola.nodes.map(function(node) {
     node.fixed = true;
     return node;
   });
@@ -529,15 +544,20 @@ function lock() {
   renderer.colajs.constraints([]).start(0,0,0);
 };
 
-function zoomed() {
-  renderer.colajs.stop();
-  renderer.svg.attr('transform', 'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')');
+function zoomed(input) {
+  var event = d3.event;
+  if(input !== undefined) {
+    renderer.zoom.translate(input.translate);
+    renderer.zoom.scale(input.scale);
+    event = input;
+  }
+  renderer.svg.attr('transform', 'translate(' + event.translate + ')scale(' + event.scale + ')');
 
   // Modify the visual boundaries
   var width = d3.select('svg').style('width').replace('px', '');
   var height = d3.select('svg').style('height').replace('px', '');
-  var newWidth = width / d3.event.scale;
-  var newHeight = height / d3.event.scale;
+  var newWidth = width / event.scale;
+  var newHeight = height / event.scale;
   var padding = 50;
   d3.selectAll('.boundary')
       .attr('x1', function(d) { return d.boundary === 'x' ? d.x : padding; })
@@ -547,31 +567,30 @@ function zoomed() {
       .attr('transform', function(d) {
         var translate;
         if(d.boundary === 'x') {
-          translate = d3.event.translate[0] + ',0';
+          translate = event.translate[0] + ',0';
         } else {
-          translate = '0,' + d3.event.translate[1];
+          translate = '0,' + event.translate[1];
         }
-        return 'translate(' + translate  + ')scale(' + d3.event.scale + ')';
+        return 'translate(' + translate  + ')scale(' + event.scale + ')';
       });
   d3.selectAll('.boundary-text')
       .attr('transform', function(d) {
         var translate;
         if(d.boundary === 'x') {
-          translate = d3.event.translate[0] + ',0';
+          translate = event.translate[0] + ',0';
         } else {
-          translate = '0,' + d3.event.translate[1];
+          translate = '0,' + event.translate[1];
         }
-        return 'translate(' + translate  + ')scale(' + d3.event.scale + ')';
+        return 'translate(' + translate  + ')scale(' + event.scale + ')';
       })
       .style('font-size', function(d) { 
-        return 12/d3.event.scale + 'px';
+        return 12/event.scale + 'px';
       });
-
 };
 
 renderer.opacity = function(node) {
   d3.event.stopPropagation();
-  if(node && node.temp) return;
+  if(node && node._temp) return;
   var neighbors = [];
 
   d3.selectAll('.link')
@@ -614,7 +633,7 @@ renderer.opacity = function(node) {
 
   if(!node) return;
 
-  var relatedConstraints = graph.spec.constraints.filter(function(constraint) {
+  var relatedConstraints = renderer.setcola.constraints.filter(function(constraint) {
     var isRelated = false;
     if(constraint.right == node._id) isRelated = true;
     if(constraint.left == node._id) isRelated = true; 
@@ -629,14 +648,17 @@ renderer.highlight = function(nodes) {
   var ids = nodes.map(function(n) { return n._id; });
   d3.selectAll('.node')
       .filter(function(node) { return ids.indexOf(node._id) != -1; })
+      .style('fill', 'firebrick')
       .style('stroke', 'red')
       .style('stroke-width', 3);
 };
 
 renderer.removeHighlight = function(nodes) {
   d3.selectAll('.node')
-      .filter(function(node) { return node.temp == null; })
-      .style('stroke-width', 0);
+      .filter(function(node) { return node._temp == null; })
+      .style('fill', graph.nodeColor)
+      .style('stroke', graph.nodeStroke)
+      .style('stroke-width', 1);
 };
 
 renderer.showError = function() {
@@ -652,7 +674,7 @@ renderer.showError = function() {
 };
 
 renderer.showLayoutBoundaries = function() {
-  var boundaries = graph.spec.nodes.filter(function(node) { return node.boundary; });
+  var boundaries = renderer.setcola.nodes.filter(function(node) { return node.boundary; });
   if(boundaries.length === 0) return;
 
   // Process the boundaries to split the x and y.
@@ -699,4 +721,41 @@ renderer.showLayoutBoundaries = function() {
         if(!string) string = 'position ~' + Math.round(d[d.boundary]);
         return string;
       });
+};
+
+renderer.centerGraph = function() {
+  var averagePos = averageNodePosition();
+  var rect = document.getElementById('zoomr').getBoundingClientRect();
+  var x = rect.width / 2 - averagePos.x;
+  var y = rect.height / 2 - averagePos.y;
+  zoomed({'translate': [x,y], 'scale': 1});
+};
+
+function averageNodePosition() {
+  var sumX = 0;
+  var sumY = 0;
+  for (var i = 0; i < renderer.setcola.nodes.length; i++) {
+    sumX += renderer.setcola.nodes[i].x;
+    sumY += renderer.setcola.nodes[i].y;
+  }
+  averageX = sumX/renderer.setcola.nodes.length;
+  averageY = sumY/renderer.setcola.nodes.length;
+  return {'x': averageX, 'y': averageY};
+};
+
+/***************************************************************/
+/******************** DEFAULT GRAPH OPTIONS ********************/
+/***************************************************************/
+
+renderer.defaultOptions = function(layout) {
+  var type = layout.nodes[renderer.options['fillprop']];
+  renderer.color = (typeof type == 'string') ? d3.scaleOrdinal(d3.schemeDark2) : d3.scaleSequential(d3.interpolateYlGnBu);
+
+  layout.nodes.forEach(function(node) {
+    node._width = node.width || node.size || renderer.options['nodesize'];
+    node._height = node.height || node.size || renderer.options['nodesize'];
+    node.pad = node.pad || renderer.options['nodepad'];
+    node.width = node._width + 2*node.pad;
+    node.height = node._height + 2*node.pad;
+  });
 };

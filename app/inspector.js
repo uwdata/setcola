@@ -44,13 +44,20 @@ function clearInspector(mode) {
 inspector.showError = function() {
   clearInspector('error');
 
-  inspector.errorVisible = hvz.error ? true : !inspector.errorVisible;
+  inspector.errorVisible = editor.error ? true : !inspector.errorVisible;
   if(inspector.errorVisible) {
     d3.select('.fa.fa-exclamation-circle').style('color', '#c80101');
     var div = d3.select('.temp-region')
         .attr('class', 'temp-region error')
         .style('display', 'flex');
-    div.select('.error p').text(hvz.error);
+    if(editor.error) {
+      div.select('.error-string').html(editor.error);
+      div.select('.error p').style('display', 'block');
+    } else {
+      div.select('.error-string').html('');
+      div.select('.error p').style('display', 'none');
+    }
+    
     createErrorContents();
   } else {
     d3.select('.fa.fa-exclamation-circle').style('color', 'white');
@@ -112,8 +119,6 @@ inspector.showDebug = function() {
     d3.select('.temp-region')
         .attr('class', 'temp-region debug')
         .style('display', 'flex');
-
-    if(typeof graph.spec == 'string') return;
     d3.selectAll('.temp-region .debug .const').remove();
     createDebugContents();
   } else {
@@ -123,7 +128,7 @@ inspector.showDebug = function() {
 };
 
 function createDebugContents() {
-  var constraints = Object.keys(layout.sets) || [];
+  var constraints = Object.keys(setcola.sets()) || [];
   var div = d3.select('.temp-region .debugcontents');
   var group = div.selectAll('.const')
       .data(constraints)
@@ -149,7 +154,7 @@ function createDebugContents() {
 
   var contents = group.append('div')
       .attr('class', 'contents')
-      .attr('id', function(d) { return d + '_contents'; });
+      .attr('id', function(d) { return constraintElementID(d) + '_contents'; });
 
   var header = contents.append('div');
   header.append('span').html(getNumSetsString);
@@ -164,11 +169,11 @@ function createDebugContents() {
 
   var select = contents.append('div')
       .attr('class', 'selects')
-      .attr('id', function(d) { return d + '_sets'; })
+      .attr('id', function(d) { return constraintElementID(d) + '_sets'; })
       .style('display', 'none');
 
   var g = select.selectAll('check')
-      .data(function(d) { return layout.sets[d]; })
+      .data(function(d) { return setcola.sets()[d]; })
     .enter().append('g')
       .attr('class', 'check')
       .style('display', 'inline-block');
@@ -190,7 +195,7 @@ function createDebugContents() {
   header.append('span').html(getSubConstraintsString);
   header.append('span')
       .attr('class', function(d) {
-        var constraints = graph.spec.constraintDefinitions.filter(function(c) { return c.name == d; })[0].forEach;
+        var constraints = renderer.setcola.constraintDefs.filter(function(c) { return c.name == d; })[0].forEach;
         if(!constraints) return '';
         return 'fa fa-caret-down';
       })
@@ -202,7 +207,7 @@ function createDebugContents() {
 
   var select = contents.append('div')
       .attr('class', 'selects')
-      .attr('id', function(d) { return d + '_constraints'; });
+      .attr('id', function(d) { return constraintElementID(d) + '_constraints'; });
 
   var g = select.selectAll('check')
       .data(getSubConstraints)
@@ -242,20 +247,24 @@ function createDebugContents() {
 
 /********************** Get Debug Contents  ********************/
 
+function constraintElementID(d) {
+  return d.replace(/ /g, '');
+};
+
 function getNumSetsString(d) {
-  var number = layout.sets[d].length;
+  var number = setcola.sets()[d].length;
   number = '<span class=\'number\'>' + number + '</span>';
   return 'Created ' + number + ' sets of nodes';
 };
 
 function getSubConstraints(d) {
-  var constraints = graph.spec.constraintDefinitions.filter(function(c) { return c.name == d; })[0].forEach || [];
+  var constraints = renderer.setcola.constraintDefs.filter(function(c) { return c.name == d; })[0].forEach || [];
   if(!constraints) return [];
   return constraints.map(function(c) { return c.constraint; }); 
 };
 
 function getSubConstraintsString(d) {
-  var constraints = graph.spec.constraintDefinitions.filter(function(c) { return c.name == d; })[0].forEach || [];
+  var constraints = renderer.setcola.constraintDefs.filter(function(c) { return c.name == d; })[0].forEach || [];
   if(!constraints) constraints = [];
 
   var number = '<span class=\'number\'>' + constraints.length + '</span>';  
@@ -267,7 +276,7 @@ function getSubConstraintsString(d) {
 
 function getSubConstraintsCountString(typeName) {
   var constraintName = d3.select(this.parentNode.parentNode).datum();
-  var constraints = graph.spec.constraints.filter(function(c) { 
+  var constraints = renderer.setcola.constraints.filter(function(c) { 
     return c._type ==  constraintName + '_' + typeName; 
   });
   number = '<span class=\'number\'>' + constraints.length + '</span>';
@@ -278,7 +287,7 @@ function getSubConstraintsCountString(typeName) {
 
   if(validator.errors) {
     var constraintName = d3.select(this.parentNode.parentNode).datum();
-    var constraints = graph.spec.constraints.filter(function(c) { 
+    var constraints = renderer.setcola.constraints.filter(function(c) { 
       return c._type ==  constraintName + '_' + typeName && c.unsat; 
     });
     number = '<span class=\'number\' style=\'color: #b86fdc\'>' + constraints.length + '</span>';
@@ -301,10 +310,10 @@ function changeConstraintVisibility(d) {
   var className = d3.select(this).attr('class');
   if(className == 'fa fa-caret-right') {
     d3.select(this).attr('class', 'fa fa-caret-down');
-    d3.select('#' + d + '_contents').style('display', 'inherit');
+    d3.select('#' + constraintElementID(d) + '_contents').style('display', 'inherit');
   } else {
     d3.select(this).attr('class', 'fa fa-caret-right');
-    d3.select('#' + d + '_contents').style('display', 'none');
+    d3.select('#' + constraintElementID(d) + '_contents').style('display', 'none');
   }
 };
 
@@ -312,10 +321,10 @@ function changeSetVisibility(d) {
   var className = d3.select(this).attr('class');
   if(className == 'fa fa-caret-right') {
     d3.select(this).attr('class', 'fa fa-caret-down');
-    d3.select('#' + d + '_sets').style('display', 'inherit');
+    d3.select('#' + constraintElementID(d) + '_sets').style('display', 'inherit');
   } else {
     d3.select(this).attr('class', 'fa fa-caret-right');
-    d3.select('#' + d + '_sets').style('display', 'none');
+    d3.select('#' + constraintElementID(d) + '_sets').style('display', 'none');
   }
 };
 
@@ -325,30 +334,30 @@ function changeSubConstraintVisibility(d) {
   var className = d3.select(this).attr('class');
   if(className == 'fa fa-caret-right') {
     d3.select(this).attr('class', 'fa fa-caret-down');
-    d3.select('#' + d + '_constraints').style('display', 'inherit');
+    d3.select('#' + constraintElementID(d) + '_constraints').style('display', 'inherit');
   } else {
     d3.select(this).attr('class', 'fa fa-caret-right');
-    d3.select('#' + d + '_constraints').style('display', 'none');
+    d3.select('#' + constraintElementID(d) + '_constraints').style('display', 'none');
   }
 };
 
 function changeAppliedConstraints(typeName) {
   var constraintName = d3.select(this.parentNode.parentNode).datum();
   if(d3.select(this)[0][0].checked) {
-    var include = graph.hidden_constraints.filter(function(c) {
+    var include = renderer.hidden_constraints.filter(function(c) {
       return c._type == constraintName + '_' + typeName;
     });
-    graph.spec.constraints = graph.spec.constraints.concat(include);
+    renderer.setcola.constraints = renderer.setcola.constraints.concat(include);
   } else {
-    var exclude = graph.spec.constraints.filter(function(c) {
+    var exclude = renderer.setcola.constraints.filter(function(c) {
       return c._type == constraintName + '_' + typeName;
     });
-    graph.hidden_constraints = graph.hidden_constraints.concat(exclude);
-    graph.spec.constraints = graph.spec.constraints.filter(function(c) {
+    renderer.hidden_constraints = renderer.hidden_constraints.concat(exclude);
+    renderer.setcola.constraints = renderer.setcola.constraints.filter(function(c) {
       return c._type != constraintName + '_' + typeName;
     });
   }
-  hvz.restart();
+  renderer.restart();
 };
 
 /************************* Debug Helpers ***********************/
@@ -379,7 +388,7 @@ inspector.toggleValidation = function() {
   } else {
     // Hide the validation and redraw the graph.
     d3.select('.validatecontents').style('display', 'none');
-    hvz.restart();
+    renderer.restart();
   }
 
 };

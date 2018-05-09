@@ -1,29 +1,59 @@
 /*****************************************************/
+/********************** Generic **********************/
+/*****************************************************/
+var graph = {};
+
+  graph.nodeColor = function(d) {
+    var fillprop = renderer.options['fillprop'];
+    var value = d[fillprop] || 0.5;
+    if(fillprop === 'color') {
+      // Don't change the color
+    } else if(typeof value == 'number') {
+      var max = Math.max(...renderer.setcola.nodes.map(function(n) { return n[fillprop] || 0.5; }));
+      d.color = renderer.color(value / max);
+    } else {
+      d.color = renderer.color(value);
+    }
+    return d.color;
+  };
+
+  graph.hoverLabel = function(node) {
+    return node[renderer.options['labelprop']] || node.name || node._id;
+  };
+
+  graph.nodeStroke = function(node) {
+    var value = 'white';
+    if(node.guide) return node.stroke || '#f6c5c5';
+    if(node.temp) return node.stroke || '#ddd';
+    return node.stroke || style.nodeStroke(node) || value;
+  };
+
+/*****************************************************/
 /********************** Default **********************/
 /*****************************************************/
 var styling = {};
 
-  styling.dx = function(d) { 
+  styling.labeldx = function(d) { 
     return d.width/2 - 7;
   };
 
-  styling.dy = function(d) { 
+  styling.labeldy = function(d) { 
     return d.width/2 + 4;
   };
 
-  styling.label = function(d) {
+  styling.labelText = function(d) {
     return d.name;
   };
 
-  styling.size = function(d) {
+  styling.labelSize = function(d) {
     return '12pt';
   };
 
-  styling.style = function(d) {
+  styling.labelStyle = function(d) {
     return 'italic';
   };
 
-  styling.color = function(d) {
+  styling.labelColor = function(d) {
     return 'white';
   };
 
@@ -32,6 +62,7 @@ var styling = {};
   };
 
   styling.options = {
+    'edgeref': '',
     'noconst': 50,
     'userconst': 100,
     'layoutconst': 200,
@@ -44,7 +75,6 @@ var styling = {};
     'debugprint': false,
     'layoutnode': false,
     'layoutboundary': false,
-    'setnode': false,
     'overlaps': true,
     'arrows': false,
     'curved': false,
@@ -61,7 +91,7 @@ var styling = {};
 /*****************************************************/
 var kruger = {};
 
-  kruger.dx = function(d) { 
+  kruger.labeldx = function(d) { 
     var pad = d.pad || renderer.options['nodepad'];
     var nodeWidth = d.width - 2*pad;
     var offset = this.getBBox().width/2;
@@ -69,24 +99,24 @@ var kruger = {};
     return nodeWidth/2 - offset;
   };
 
-  kruger.dy = function(d) { 
+  kruger.labeldy = function(d) { 
     var pad = d.pad || renderer.options['nodepad'];
     return (d.height - 2*pad)/2;
   };
 
-  kruger.label = function(d) {
+  kruger.labelText = function(d) {
     return d.name;
   };
 
-  kruger.size = function(d) {
+  kruger.labelSize = function(d) {
     return '5pt';
   };
 
-  kruger.style = function(d) {
+  kruger.labelStyle = function(d) {
     return 'regular';
   };
 
-  kruger.color = function(d) {
+  kruger.labelColor = function(d) {
     return 'black';
   };
 
@@ -105,17 +135,16 @@ var kruger = {};
 /*****************************************************/
 var serengeti = {};
 
-  serengeti.dx = function(d) { 
+  serengeti.labeldx = function(d) { 
     if(d.group1 <= 6) return d.size + 1;
-    return d.size/2 - 5;
-  };
+    return d.size/2 - 5;labelS  };
 
-  serengeti.dy = function(d) { 
+  serengeti.labeldy = function(d) { 
     if(d.group1 <= 6) return d.size/2 + 7; 
     return d.size/2 + 5;
   };
 
-  serengeti.label = function(d) {
+  serengeti.labelText = function(d) {
     var string = ''
     if(!d.species) {
       // Do nothing.
@@ -129,17 +158,17 @@ var serengeti = {};
     return string;
   };
 
-  serengeti.size = function(d) {
+  serengeti.labelSize = function(d) {
     if(d.group1 <= 6) return '14pt';
     return '10pt';
   };
 
-  serengeti.style = function(d) {
+  serengeti.labelStyle = function(d) {
     if(d.group1 <= 6) return 'italic';
     return 'normal';
   };
 
-  serengeti.color = function(d) {
+  serengeti.labelColor = function(d) {
     return 'black';
   };
 
@@ -156,31 +185,30 @@ var serengeti = {};
 /*****************************************************/
 var syphilis = {};
 
-  syphilis.dx = function(d) { 
+  syphilis.labeldx = function(d) { 
     var offset = 11;
-    var pad = d.pad || renderer.options['nodepad'];
-    if((d.width-2*pad) === 24) offset = 7;
-    return (d.width - 2*pad)/2 - offset;
+    if(d._width === 24) offset = 7;
+    return d._width/2 - offset;
   };
 
-  syphilis.dy = function(d) { 
+  syphilis.labeldy = function(d) { 
     var pad = d.pad || renderer.options['nodepad'];
-    return (d.height - 2*pad)/2 + 5;
+    return d._height/2 + 5;
   };
 
-  syphilis.label = function(d) {
+  syphilis.labelText = function(d) {
     return d.name;
   };
 
-  syphilis.size = function(d) {
+  syphilis.labelSize = function(d) {
     return '9pt';
   };
 
-  syphilis.style = function(d) {
+  syphilis.labelStyle = function(d) {
     return 'regular';
   };
 
-  syphilis.color = function(d) {
+  syphilis.labelColor = function(d) {
     return 'black';
   };
 
@@ -198,29 +226,29 @@ var syphilis = {};
 /*****************************************************/
 var tlr4 = {};
 
-  tlr4.dx = function(d) { 
+  tlr4.labeldx = function(d) { 
     var offset = this.getBBox().width/2 -4;
     var pad = d.pad || renderer.options['nodepad'];
     return (d.width - 2*pad)/2 - offset;
   };
 
-  tlr4.dy = function(d) { 
+  tlr4.labeldy = function(d) { 
     return 35;
   };
 
-  tlr4.label = function(d) {
+  tlr4.labelText = function(d) {
     return d.showLabel;
   };
 
-  tlr4.size = function(d) {
+  tlr4.labelSize = function(d) {
     return '9pt';
   };
 
-  tlr4.style = function(d) {
+  tlr4.labelStyle = function(d) {
     return 'regular';
   };
 
-  tlr4.color = function(d) {
+  tlr4.labelColor = function(d) {
     return 'black';
   };
 
@@ -244,30 +272,30 @@ var tlr4 = {};
 /*****************************************************/
 var innatedb = {};
 
-  innatedb.dx = function(d) { 
+  innatedb.labeldx = function(d) { 
     var offset = this.getBBox().width/2 -4;
     var pad = d.pad || renderer.options['nodepad'];
     return (d.width - 2*pad)/2 - offset;
   };
 
-  innatedb.dy = function(d) { 
+  innatedb.labeldy = function(d) { 
     return 35;
   };
 
-  innatedb.label = function(d) {
+  innatedb.labelText = function(d) {
     if(d.showLabel) return d['-label'];
     return '';
   };
 
-  innatedb.size = function(d) {
+  innatedb.labelSize = function(d) {
     return '11pt';
   };
 
-  innatedb.style = function(d) {
+  innatedb.labelStyle = function(d) {
     return 'regular';
   };
 
-  innatedb.color = function(d) {
+  innatedb.labelColor = function(d) {
     return 'black';
   };
 
@@ -276,6 +304,7 @@ var innatedb = {};
   };
 
   innatedb.options = {
+    'edgeref': 'id',
     'linkdist': 225,
     'constgap': 100,
     'curved': true,

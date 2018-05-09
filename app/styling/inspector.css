@@ -3,29 +3,24 @@
   .temp-region {
     display: none;
     margin: 0px 2px 4px 2px;
-    flex: 0 1 40%;
     flex-flow: column;
+    flex: 1 1 35%;
     overflow: scroll;
-  }
-
-  .long-text {
-    width: 850px;
   }
 
 /*---------------------- ERROR ----------------------*/
 
   .temp-region.error {
     border: 1px solid #c80101;
-    flex: 0 1 10%;
+    flex: 0 1 auto;
   }
 
-  .temp-region.config .error {
+  .temp-region.error .error {
     display: block;
     margin: 5px;
   }
 
-  .temp-region.error .error p, .temp-region.error .error .fa {
-    display: inline-block;
+  .temp-region.error .error .fa {
     padding: 0px 5px;
     margin: 13px 0px;
     font-size: smaller;
@@ -33,7 +28,17 @@
   }
 
   .temp-region.error .error p {
+    display: block;
+    padding: 0px 5px;
+    margin: 13px 0px;
+    font-size: smaller;
     font-family: sans-serif;
+    color: #c80101;
+  }
+
+  .temp-region.error h1 {
+    display: block;
+    padding: 0px 0px 0px 5px;
   }
 
   .temp-region.error .label {
@@ -60,12 +65,13 @@
   }
 
   .temp-region.debug .debug {
-    display: block;
+    display: flex;
+    flex-flow: column;
     margin: 5px;
   }
 
   .temp-region.debug h1 {
-    display: inline-block;
+    display: flex;
     margin: 0px 0px 5px 0px;
     font-size: 20px;
     color: #efad0c;
@@ -79,6 +85,10 @@
 
   .temp-region.debug span.bold {
     font-weight: bold;
+  }
+
+  .temp-region.debug span.tt {
+    font-family: monospace;
   }
 
   .fa-caret-right, .fa-caret-down {
@@ -217,11 +227,11 @@
   }
 
   .temp-region.config h2 {
-    margin: 2px 0px;
+    margin: 6px 0px;
     font-size: larger;
     font-family: monospace;
     font-weight: normal;
-    display: inline;
+    display: inline-block;
     color: #01adc8;
   }
 
@@ -328,6 +338,7 @@
 
   .temp-region.cite {
     border: 1px solid #b86fdc;
+    flex: 0 1 auto;
   }
 
   .temp-region.cite .cite {

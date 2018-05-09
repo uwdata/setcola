@@ -495,7 +495,7 @@
 	"constraintDefinitions": [
     {
     	"name": "ethnographic groups",
-      "sets": {"partition": "group", "ignore": [""]},
+      "sets": {"partition": "group", "exclude": [""]},
       "forEach": [
         { "constraint": "position", "position": "below", "of": "boundary", "gap": 75 },
         { "constraint": "position", "position": "above", "of": "bottom", "gap": 30 }
@@ -529,7 +529,7 @@
     },
     {
     	"name": "men",
-      "sets": {"partition": "group", "ignore": ["young white women", ""]},
+      "sets": {"partition": "group", "exclude": ["young white women", ""]},
       "forEach": [
       	{"constraint": "align", "axis": "y"},
       	{"constraint": "padding", "amount": 10}

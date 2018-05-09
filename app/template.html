@@ -20,7 +20,8 @@
   <div class="header noselect">
     <h1>Visualization</h1>
     <span class="fa fa-play" title="Restart"></span>
-    <span class="fa fa-lock" title="Fix Graph" onclick="lock()"></span>
+    <span class="fa fa-lock" title="Lock Node Positions" onclick="lock()"></span>
+    <span class="status">Rendering graph...</span>
     <div class="controls">
       <span class="fa fa-exclamation-circle" title="Error Pane"></span>
       <span class="fa fa-bug" title="Debug Pane"></span>
@@ -39,15 +40,17 @@
   </svg>
   <div class="temp-region">
     <div class="error">
-      <span class="fa fa-exclamation-circle"></span>
-      <p></p>
+      <p><span class="fa fa-exclamation-circle"></span><span class='error-string'></span></p>
+      <h1>Runtime for the SetCola compiler and the WebCoLa layout.</h1>
       <div><span class="label">SetCoLa: </span><span class="value" id="time-setcola"></span></div>
       <div><span class="label">WebCoLa: </span><span class="value" id="time-webcola"></span></div>
     </div>
     <div class="debug">
       <h1>Constraint Debugging</h1><br>
-      <div class='long-text'>
-        For each <span class='bold'>constraint definition</span>, the number of sets produced by the <span class='bold'>set definition</span> is shown. Expanding this section shows the set name (or id) for each set. Hovering over the set name highlights the base nodes included in that set. The number of constraints defined for each <span class='bold'>constraint application</span> is also shown. These constraints are applied to the nodes within each set. Each SetCoLa constraint is labeled with the number of WebCoLa constraints that are produced. Toggling the checkbox temporarily removes the corresponding WebCoLa constraints produced for that SetCoLa constraint.
+      <div style='margin: 10px 0px'>
+        For each <span class='bold'>constraint definition</span>, the number of sets produced by the <span class='bold'>set definition</span> is shown. Expanding this section shows the set name (or id) for each set. The number of constraints defined for each <span class='bold'>constraint application</span> is also shown. These constraints are applied to the nodes within each set. Each SetCoLa constraint is labeled with the number of WebCoLa constraints that are produced. 
+        <br><br>
+        <span class='bold'>Interactions:</span> Hovering over the set name highlights the base nodes included in that set. Selecting part of either the SetCoLa spec or WebCoLa spec that contains one or more node IDs also highlights the nodes in the graph; to do this, the selection must contain the string <span class='tt'>"source"</span>, <span class='tt'>"target"</span>, <span class='tt'>"_id"</span>, <span class='tt'>"left"</span>, <span class='tt'>"right"</span>, or <span class='tt'>"node"</span> and the ID number. Note: temporary nodes are only highlighted if they are marked as visible in the configuration options. Toggling the constraint checkbox temporarily removes the corresponding WebCoLa constraints produced for that SetCoLa constraint.
       </div>
       <div class='debugcontents'></div>
       <br>
@@ -78,17 +81,21 @@
     </div>
     <div class="options">
       <h1>Config Options</h1><br>
+
+      <h2>Input Graph Options</h2><br>
+        <div class="label"><span>Edge Reference Property:</span></div>
+          <input type="text" id="text-edgeref" onchange="updateText('edgeref')"><br>
+
+      <h2>SetCoLa Rendering Options</h2><br>
         <div class="label"><span>Print Debugging Log:</span></div>
           <input type="checkbox" id="check-debugprint" onchange="updateCheck('debugprint')"><br>
         <div class="label"><span>Show Layout Nodes:</span></div>
           <input type="checkbox" id="check-layoutnode" onchange="updateCheck('layoutnode')"><br>
         <div class="label"><span>Show Layout Boundaries:</span></div>
           <input type="checkbox" id="check-layoutboundary" onchange="updateCheck('layoutboundary')"><br>
-        <div class="label"><span>Add Set Nodes:</span></div>
-          <input type="checkbox" id="check-setnode" onchange="updateCheck('setnode')"><br>
 
       <h2>Start</h2>
-        <span class="explanation">(The number of iterations for each step of the cola layout engine.)</span><br>
+        <span class="explanation">(The number of iterations for each step of the WebCoLa layout engine.)</span><br>
         <div class="label"><span>No Constraints:</span></div>
           <input type="range" id="range-noconst" min="0" max="300" step="5" onchange="updateRange('noconst')">
           <span class="value" id="value-noconst"></span><br>
@@ -99,7 +106,7 @@
           <input type="range" id="range-layoutconst" min="0" max="300" step="5" onchange="updateRange('layoutconst')">
           <span class="value" id="value-layoutconst"></span><br>
 
-      <h2>Cola Options</h2>
+      <h2>WebCoLa Options</h2>
         <span class="explanation">(Various options for the layout of the graph.)</span><br>
         <div class="label"><span>Avoid Overlaps:</span></div>
         <input type="checkbox" id="check-overlaps" onchange="updateCheck('overlaps')" checked><br>
@@ -116,7 +123,7 @@
           <input type="range" id="range-constgap" min="0" max="500" step="5" onchange="updateRange('constgap')">
           <span class="value" id="value-constgap"></span><br>
 
-      <h2>Graph Options</h2>
+      <h2>Rendering Options</h2>
         <span class="explanation">(Graph drawing options.)</span><br>
         <div class="label"><span>Show Arrowheads:</span></div>
           <input type="checkbox" id="check-arrows" onchange="updateCheck('arrows')"><br>
@@ -139,7 +146,7 @@
     </div>
     <div class="help">
       <h1>SetCoLa</h1>
-      <p class='long-text'>
+      <p>
       A SetCoLa specification contains multiple constraint definitions under the heading <span>"constraintDefinitions"</span> that specify the desired behavior for the graph layout. You may also specify a set of <span>"guides"</span> (reference elements that serve as positional anchors), which is a list of nodes that include an <span>"x"</span> and/or <span>"y"</span> property.
       </p>
 
@@ -414,7 +421,7 @@
     </div>
     <div class="cite">
       <h1>SetCoLa</h1>
-      <p class='long-text'>
+      <p>
         SetCoLa is a domain-specific language for specifying high-level constraints for graph layout relative to the properties of the backing data. SetCoLa is a research project from the <a class='paragraphlink' href='https://www.cs.washington.edu/'>University of Washington</a> in the Paul G. Allen School for Computer Science & Engineering. If you are interested in this work, please take a look at our paper: <span class='papertitle'>"SetCoLa: High-Level Constraints for Graph Layout"</span> or our Github <span class='fa fa-github'></span> respository at <a class='url' href='https://github.com/uwdata/setcola'>https://github.com/uwdata/setcola</a>.
       </p>
       <div class="publication">
