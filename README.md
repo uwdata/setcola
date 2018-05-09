@@ -198,7 +198,7 @@ var graph = {
 
 SetCoLa produces the following layout:
 
-![alt text](https://uwdata.github.io/setcola/app/images/smalltree.png "SetCoLa small tree layout")
+![alt text](https://github.com/uwdata/setcola/blob/master/app/images/smalltree.png "SetCoLa small tree layout")
 
 For more examples, please take a look at our [online graph editor](https://uwdata.github.io/setcola/).
 
