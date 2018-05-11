@@ -2,7 +2,7 @@
 SetCoLa is a domain-specific language for specifying high-level graph layout constraints relative to properties of the underlying graph. This repository contains a SetCoLa compiler that generates constraints for [WebCoLa](http://ialab.it.monash.edu/webcola/) and includes an [online graph editor](https://uwdata.github.io/setcola/).
 
 ## Citation
-If you are interested in this work, please see [our research paper](https://homes.cs.washington.edu/~jhoffs/website/resources/papers/2018-SetCoLa-EuroVis.pdf) from EuroVis 2018 and consider citing our work:
+If you are interested in this work, please see [our EuroVis 2018 research paper](http://idl.cs.washington.edu/papers/setcola/) and consider citing our work:
 
 ```
 @inproceedings{2016-setcola,
@@ -10,7 +10,7 @@ If you are interested in this work, please see [our research paper](https://home
     author = {Jane Hoffswell AND Alan Borning AND Jeffrey Heer},
     booktitle = {Computer Graphics Forum (Proc. EuroVis)},
     year = {2018},
-    url = {https://homes.cs.washington.edu/~jhoffs/papers/2018-SetCoLa-EuroVis.pdf},
+    url = {http://idl.cs.washington.edu/files/2018-SetCoLa-EuroVis.pdf},
 }
 ```
 
