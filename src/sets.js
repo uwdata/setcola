@@ -27,12 +27,16 @@ function contains(list, value) {
   return list.indexOf(value) !== -1;
 };
 
+function leaf(element, path) {
+  return path.split('.').reduce((value, property) => value[property], element)
+};
+
 function partitionSet(elements, definition) {
   var partitionSets = {};
 
   // Split the elements into sets based on their partition property.
   elements.forEach(function(element) {
-    var partitionValue = element[definition.partition];
+    var partitionValue = leaf(element, definition.partition);
     if(definition.partition === 'parent' && partitionValue) {
       partitionValue = partitionValue._id; 
     }
